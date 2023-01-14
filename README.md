@@ -68,7 +68,7 @@
 https://www.figma.com/file/mchCAMYEzoKdhiBCZS7A1O/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1&t=wTeHBsLjQh2v487c-1
 
 ## ■ER図
-<a href="https://gyazo.com/5fdea353c121f3535d2c505acae5f2d7"><img src="https://i.gyazo.com/5fdea353c121f3535d2c505acae5f2d7.png" alt="Image from Gyazo" width="970"/></a>
+<a href="https://gyazo.com/9a83de258f9d14990fe89972604d8215"><img src="https://i.gyazo.com/9a83de258f9d14990fe89972604d8215.png" alt="Image from Gyazo" width="1249"/></a>
 
 ## ■スケジュール
 ```
