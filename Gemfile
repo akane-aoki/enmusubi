@@ -44,6 +44,9 @@ gem "bootsnap", require: false
 
 gem 'sorcery', '~> 0.16.4'
 
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
