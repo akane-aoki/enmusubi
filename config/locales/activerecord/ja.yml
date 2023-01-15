@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      post: 'がんばり投稿'
+    attributes:
+      user:
+        name: 'ニックネーム'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード再入力'
+        address: '住んでいるところ'
+        avatar: 'アイコン'
+        created_at: '登録日'
+      invitation:
+        user_name: '招待者'
+      post:
+        body: '内容'
+        published_at: '公開日'
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: 'パスワードを入力してください'
+              invalid: 'パスワードに誤りがあります'
+              too_short: 'パスワードは6文字以上入力してください'
+            password_confirmation:
+              blank: 'パスワードを再入力してください'
+              confirmation: 'パスワードが違います'

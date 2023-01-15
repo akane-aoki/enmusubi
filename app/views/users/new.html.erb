@@ -1,3 +1,4 @@
+<%= content_for(:title, t('.title')) %>
 <div class="container d-flex flex-column">
   <div class="row align-items-center justify-content-center g-0 min-vh-100">
     <div class="col-lg-5 col-md-8 py-8 py-xl-0">
@@ -6,10 +7,9 @@
         <!-- Card body -->
         <div class="card-body p-6">
           <div class="mb-4">
-            <%# <%= image_tag 'logo-icon.svg', class: 'mb-4' %> %>
-            <h1 class="mb-1 fw-bold">Sign up</h1>
-            <span>Already have an account?
-              <%= link_to 'ログイン', login_path, class: 'ms-1' %>
+            <h1><%= t('.title') %></h1>
+            <span>アカウントをお持ちの場合はこちら
+              <%= link_to t('defaults.login'), login_path, class: 'ms-1' %>
             </span>
           </div>
           <!-- Form -->
@@ -44,7 +44,7 @@
               </div>
             </div>
             <div class="d-grid">
-              <%= f.submit '登録', class: 'btn btn-primary' %>
+              <%= f.submit t('defaults.register'), class: 'btn btn-primary' %>
             </div>
           <% end %>
         </div>
