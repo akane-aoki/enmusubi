@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to events_path, success: 'ログインしました'
+      redirect_back_or_to dashboards_path, success: 'ログインしました'
     else
       flash.now[:danger] = 'ログインに失敗しました'
       render :new
