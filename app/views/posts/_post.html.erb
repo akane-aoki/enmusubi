@@ -1,0 +1,32 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="post-id-<%= post.id %>">
+    <div class="card">
+      <% if post.post_image? %>  <!-- アップロード画像がある場合に実行する -->
+        <%= image_tag post.post_image_url, class: 'card-img-top', size: '300x200' %><!-- boardインスタンスの画像ファイルのURLを取得し表示 -->
+      <%# <% else %> %>
+        <%# <%= image_tag 'post_placeholder.png', class: 'card-img-top', size: '300x200' %> %>
+      <% end %>
+      <div class="card-body">
+        <h4 class="card-title">
+          <%= link_to post.title, post_path(post) %>
+        </h4>
+        <% if current_user.own?(post) %>
+          <%= render 'crud_menus', post: post %>
+        <%# <% else %> %>
+          <%# <%= render 'bookmark_button', post: post %> %>
+        <% end %>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <%= icon 'far', 'user' %>
+            <%= post.user.decorate.full_name %>
+          </li>
+          <li class="list-inline-item">
+            <%= icon 'far', 'calendar' %>
+            <%= l post.created_at, format: :long %>
+          </li>
+        </ul>
+        <p class="card-text"><%= post.body %></p>
+      </div>
+    </div>
+  </div>
+</div>
