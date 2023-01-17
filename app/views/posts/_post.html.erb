@@ -1,0 +1,18 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="post-id-<%= post.id %>">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <%= l post.date, format: :long %>
+        </h4>
+        <% if current_user.own?(post) %>
+          <%= render 'crud_menus', post: post %>
+        <% end %>
+        <p class="card-text"><%= post.body %></p>
+        <% if post.image? %>  <!-- アップロード画像がある場合に実行する -->
+          <%= image_tag post.image_url, class: 'card-img-top', size: '300x200' %><!-- boardインスタンスの画像ファイルのURLを取得し表示 -->
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

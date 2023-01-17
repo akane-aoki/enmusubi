@@ -47,6 +47,10 @@ gem 'sorcery', '~> 0.16.4'
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
+gem 'carrierwave'
+
+gem 'font-awesome-sass'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
