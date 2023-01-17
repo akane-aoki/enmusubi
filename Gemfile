@@ -49,6 +49,8 @@ gem 'jsbundling-rails'
 
 gem 'carrierwave'
 
+gem 'font-awesome-sass'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

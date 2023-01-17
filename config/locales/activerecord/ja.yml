@@ -15,7 +15,9 @@ ja:
       invitation:
         user_name: '招待者'
       post:
+        date: '日付'
         body: '内容'
+        image: '画像'
         published_at: '公開日'
     errors:
       models:
