@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @q = post.ransack(params[:q])
-    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+    @posts = Post.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def show
@@ -17,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path, success: t('defaults.message.created', item: post.model_name.human)
+      redirect_to posts_path, success: t('defaults.message.created')#, item: post.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_created', item: post.model_name.human)
       render :new
@@ -48,6 +47,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:body, :date, :image)
+    params.require(:post).permit(:body, :date, :image, :image_cache)
   end
 end
