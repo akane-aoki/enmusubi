@@ -79,6 +79,8 @@ group :development, :test do
 
   # Table/Schema
   gem 'annotate', '~> 3.2'
+
+  gem 'faker', '~> 3.1'
 end
 
 group :development do
@@ -99,5 +101,4 @@ end
 group :test do
   gem 'capybara', '~> 3.38'
   gem 'webdrivers', '~> 5.2'
-  gem 'faker', '~> 3.1'
 end

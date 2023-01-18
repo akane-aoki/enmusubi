@@ -7,6 +7,7 @@ class SorceryCore < ActiveRecord::Migration[7.0]
       t.string :salt
       t.string :address
       t.string :avatar
+      t.references :relationship, foreign_key: true
 
       t.timestamps                null: false
     end
