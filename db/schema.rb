@@ -10,15 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_16_133736) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_18_090642) do
+  create_table "meets", force: :cascade do |t|
+    t.date "meet_day", null: false
+    t.integer "status"
+    t.integer "relationship_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relationship_id"], name: "index_meets_on_relationship_id"
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.string "body"
-    t.date "date"
+    t.string "body", limit: 65535
+    t.date "date", null: false
     t.string "image"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,10 +42,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_133736) do
     t.string "salt"
     t.string "address"
     t.string "avatar"
+    t.integer "relationship_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["relationship_id"], name: "index_users_on_relationship_id"
   end
 
+  add_foreign_key "meets", "relationships"
   add_foreign_key "posts", "users"
+  add_foreign_key "users", "relationships"
 end
