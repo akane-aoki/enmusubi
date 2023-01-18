@@ -2,7 +2,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :posts, dependent: :destroy
-  belongs_to :relationship
+  belongs_to :relationship, optional: true
   has_one :invitation, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :efforts, dependent: :destroy
