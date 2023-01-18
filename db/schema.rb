@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_18_112012) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_18_123956) do
   create_table "comments", force: :cascade do |t|
     t.text "body", null: false
     t.integer "user_id", null: false
@@ -32,14 +32,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_112012) do
   create_table "meets", force: :cascade do |t|
     t.date "meet_day", null: false
     t.integer "status"
-    t.integer "relationship_id"
+    t.integer "relationship_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["relationship_id"], name: "index_meets_on_relationship_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "body", limit: 65535
+    t.text "body", limit: 65535
     t.date "date", null: false
     t.string "image"
     t.integer "user_id", null: false
@@ -51,6 +51,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_112012) do
   create_table "relationships", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.integer "not_meet_day", null: false
+    t.string "content", null: false
+    t.integer "relationship_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relationship_id"], name: "index_rewards_on_relationship_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,5 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_112012) do
   add_foreign_key "efforts", "users"
   add_foreign_key "meets", "relationships"
   add_foreign_key "posts", "users"
+  add_foreign_key "rewards", "relationships"
   add_foreign_key "users", "relationships"
 end
