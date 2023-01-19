@@ -19,7 +19,7 @@
             <%= image_tag @post.image.url, class: 'card-img-top img-fluid', size: '300x200' %>
           <% end %>
         </div>
-        <div class="text-right"><%= l @post.created_at, format: :long %></div>
+        <div class="text-right">投稿した日：<%= l @post.created_at, format: :long %></div>
       </div>
     </div>
   </div>

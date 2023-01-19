@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_user, only: %i[edit update destroy]
+
   def index
     @posts = Post.includes(:user).order(created_at: :desc).page(params[:page])
   end
@@ -23,8 +25,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @post.update(@post) 

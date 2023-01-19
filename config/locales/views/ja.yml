@@ -54,7 +54,7 @@ ja:
     show:
       title: '恋人のがんばり記録（くわしく見る）'
     edit:
-      title: 'がんばり投稿編集'
+      title: 'がんばったことを編集する'
 
   time:
     formats:
