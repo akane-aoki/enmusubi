@@ -12,6 +12,9 @@
     <div class='row'>
       <div class='col-md-9'>
         <div class="text-left">by <%= @post.user.name %></div>
+        <% if current_user.own?(@post) %>
+          <%= render 'crud_menus', post: @post %>
+        <% end %>
         <div class="text-center"><%= @post.date %></div>
         <div class="text-center"><%= @post.body %></div>
         <div class='col-md-3'>
