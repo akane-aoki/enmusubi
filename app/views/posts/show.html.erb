@@ -1,2 +1,34 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%= content_for(:body, @post.body) %>
+<div class="container pt-5">
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <!-- 掲示板内容 -->
+      <article class="card">
+        <div class="card-body">
+          <div class='row'>
+            <div class='col-md-3'>
+              <% if @post.image? %>  <!-- アップロード画像がある場合に実行する -->
+                <%= image_tag @post.image_url, class: 'card-img-top img-fluid', size: '300x200' %>
+              <% end %>
+            </div>
+            <div class='col-md-9'>
+              <h3 style='display: inline;'><%= @post.body %></h3>
+              <%= render 'crud_menus', post: @post if current_user.own?(@post) %>
+              <ul class="list-inline">
+                <li class="list-inline-item">by <%= @post.user.name %></li>
+                <li class="list-inline-item"><%= l @post.created_at, format: :long %></li>
+              </ul>
+            </div>
+          </div>
+          <p><%= simple_format(@post.body) %></p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- コメントフォーム -->
+  <%# <%= render 'comments/form', { post: @post, comment: @comment } %> %>
+  <!-- コメントエリア -->
+  <%# <%= render 'comments/comments',{ comments: @comments } %> %>
+</div>
