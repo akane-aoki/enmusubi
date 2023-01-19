@@ -50,8 +50,7 @@ ja:
       title: 'がんばり投稿一覧'
       no_result: '掲示板がありません'
     new:
-      title: 'がんばり投稿作成'
-      post_title: 'タイトル'
+      title: 'がんばりを伝える'
     show:
       title: 'がんばり投稿詳細'
     edit:
