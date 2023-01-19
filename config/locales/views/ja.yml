@@ -11,7 +11,7 @@ ja:
     delete: '削除'
     password_reset: 'パスワードリセット'
 
-  message:
+    message:
       require_login: "ログインしてください"
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"

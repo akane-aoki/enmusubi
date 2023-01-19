@@ -16,9 +16,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path, success: t('defaults.message.created')#, item: post.model_name.human)
+      redirect_to posts_path, success: t('defaults.message.created', item: Post.model_name.human)
     else
-      flash.now[:danger] = t('defaults.message.not_created', item: post.model_name.human)
+      flash.now[:danger] = t('defaults.message.not_created', item: Post.model_name.human)
       render :new
     end
   end
@@ -28,16 +28,16 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(@post) 
-      redirect_to posts_path, success: t('defaults.message.updated', item: post.model_name.human)
+      redirect_to posts_path, success: t('defaults.message.updated', item: Post.model_name.human)
     else
-      flash.now[:danger] = t('defaults.message.not_updated', item: post.model_name.human)
+      flash.now[:danger] = t('defaults.message.not_updated', item: Post.model_name.human)
       render :edit
     end
   end
 
   def destroy
     @post.destroy!
-    redirect_to posts_path, success: t('defaults.message.deleted', item: post.model_name.human)
+    redirect_to posts_path, success: t('defaults.message.deleted', item: Post.model_name.human)
   end
 
   private

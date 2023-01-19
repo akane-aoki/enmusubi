@@ -10,7 +10,7 @@
         <% end %>
         <p class="card-text"><%= post.body %></p>
         <% if post.image? %>  <!-- アップロード画像がある場合に実行する -->
-          <%= image_tag post.image_url, class: 'card-img-top', size: '300x200' %><!-- boardインスタンスの画像ファイルのURLを取得し表示 -->
+          <%= image_tag post.image.url, class: 'card-img-top', size: '300x200' %><!-- boardインスタンスの画像ファイルのURLを取得し表示 -->
         <% end %>
       </div>
     </div>
