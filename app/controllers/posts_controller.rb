@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
-    if @post.update(@post) 
+    if @post.update(post_params)
       redirect_to posts_path, success: t('defaults.message.updated', item: Post.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: Post.model_name.human)
