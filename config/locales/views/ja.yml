@@ -56,6 +56,10 @@ ja:
     edit:
       title: 'がんばったことを編集する'
 
+  distances:
+    index:
+      title: '2人の総移動距離'
+
   time:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"

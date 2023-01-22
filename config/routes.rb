@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy], shallow: true
   end
   resources :meets
+  resources :distances
   resources :password_resets, only: %i[new create edit update]
 
   get 'login', to: 'sessions#new'
