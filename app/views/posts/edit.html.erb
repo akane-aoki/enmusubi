@@ -1,2 +1,9 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<%= content_for(:title, t('.title')) %>
+<div class="text-center text-gray-700">
+  <div class="p-4 m-5">
+    <div class="text-2xl">
+      <div class="font-bold"><%= t('.title') %></div>
+      <%= render 'form', { post: @post } %>
+    </div>
+  </div>
+</div>

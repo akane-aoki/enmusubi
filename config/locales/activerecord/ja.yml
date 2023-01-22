@@ -16,7 +16,7 @@ ja:
         user_name: '招待者'
       post:
         date: '日付'
-        body: '内容'
+        body: 'がんばったこと'
         image: '画像'
         published_at: '公開日'
     errors:

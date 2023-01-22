@@ -11,7 +11,7 @@ ja:
     delete: '削除'
     password_reset: 'パスワードリセット'
 
-  message:
+    message:
       require_login: "ログインしてください"
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
@@ -50,12 +50,11 @@ ja:
       title: 'がんばり投稿一覧'
       no_result: '掲示板がありません'
     new:
-      title: 'がんばり投稿作成'
-      post_title: 'タイトル'
+      title: 'がんばりを伝える'
     show:
-      title: 'がんばり投稿詳細'
+      title: '恋人のがんばり記録（くわしく見る）'
     edit:
-      title: 'がんばり投稿編集'
+      title: 'がんばったことを編集する'
 
   time:
     formats:
