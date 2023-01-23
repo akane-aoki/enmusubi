@@ -1,0 +1,10 @@
+<div class="flex justify-center">
+  <%= form_with model: meet, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :meet_day %>
+      <%= f.date_field :meet_day, class: 'form-control', rows: 10 %>
+    </div>
+    <%= f.submit t('defaults.create'), class: 'btn btn-primary' %>
+  <% end %>
+</div>

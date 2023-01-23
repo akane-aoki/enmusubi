@@ -6,7 +6,7 @@ ja:
     create: '作成'
     post: '投稿'
     update: '更新'
-    edit: '編集'
+    edit: '編集する'
     show: '詳細'
     delete: '削除'
     password_reset: 'パスワードリセット'
@@ -59,6 +59,12 @@ ja:
   distances:
     index:
       title: '2人の総移動距離'
+
+  meets:
+    index:
+      title: '２人の会う日'
+    new:
+      title: '会う日を決める'
 
   time:
     formats:

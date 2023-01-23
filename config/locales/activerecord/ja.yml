@@ -19,6 +19,8 @@ ja:
         body: 'がんばったこと'
         image: '画像'
         published_at: '公開日'
+      meet:
+        meet_day: '会う日'
     errors:
       models:
         user:
