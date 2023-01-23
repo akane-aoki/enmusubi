@@ -60,6 +60,10 @@ ja:
     index:
       title: '2人の総移動距離'
 
+  meets:
+    index:
+      title: '２人の会う日'
+
   time:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
