@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'relationships/new'
   root 'static_pages#top'
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
