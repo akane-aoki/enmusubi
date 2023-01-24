@@ -1,0 +1,21 @@
+<div class="flex justify-center">
+  <%= form_with model: reward, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="p-4 m-5 text-2xl">
+      <div class="text-center font-bold">会えていない日が</div>
+    </div>
+    <div class="text-2xl">
+      <%= f.number_field :not_meet_day, in: 1..1000, class: 'px-1 py-5 w-20' %>
+    </div>
+    <div class="p-4 m-5 text-2xl">
+      <div class="text-center font-bold">日になったら、</div>
+    </div>
+    <div class="p-4 m-5 text-2xl">
+      <div class="text-center font-bold">次会ったときに</div>
+    </div>
+    <div class="m-7 text-2xl">
+      <%= f.text_area :content, class: 'p-5', placeholder: "銀座で焼肉を食べる！" %>
+    </div>
+    <%= f.submit t('defaults.create'), class: 'btn btn-primary' %>
+  <% end %>
+</div>

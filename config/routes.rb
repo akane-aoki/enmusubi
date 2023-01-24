@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'relationships/new'
   root 'static_pages#top'
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
@@ -8,6 +7,8 @@ Rails.application.routes.draw do
   end
   resources :meets
   resources :distances
+  resources :relationships
+  resources :rewards
   resources :password_resets, only: %i[new create edit update]
 
   get 'login', to: 'sessions#new'

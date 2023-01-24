@@ -3,7 +3,7 @@ ja:
     login: "ログイン"
     register: '登録'
     logout: 'ログアウト'
-    create: '作成'
+    create: '作成する'
     post: '投稿'
     update: '更新'
     edit: '編集する'
@@ -65,6 +65,14 @@ ja:
       title: '２人の会う日'
     new:
       title: '会う日を決める'
+
+  rewards:
+    index:
+      title: '会えなかった分のごほうび'
+    new:
+      title: '会えなかった分のごほうびを決める'
+    edit:
+      title: '会えなかった分のごほうびを編集する'
 
   time:
     formats:

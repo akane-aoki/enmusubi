@@ -21,6 +21,9 @@ ja:
         published_at: '公開日'
       meet:
         meet_day: '会う日'
+      reward:
+        not_meet_day: '会えない日数'
+        content: '会えなかった分のごほうび'
     errors:
       models:
         user:
