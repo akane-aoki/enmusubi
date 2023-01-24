@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'efforts/new'
+  get 'efforts/edit'
+  get 'efforts/index'
   root 'static_pages#top'
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
