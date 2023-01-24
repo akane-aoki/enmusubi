@@ -24,6 +24,8 @@ ja:
       reward:
         not_meet_day: '会えない日数'
         content: '会えなかった分のごほうび'
+      effort:
+        body: 'がんばること'
     errors:
       models:
         user:

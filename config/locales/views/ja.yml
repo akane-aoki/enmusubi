@@ -74,6 +74,10 @@ ja:
     edit:
       title: '会えなかった分のごほうびを編集する'
 
+  efforts:
+    new:
+      title: '私のがんばること'
+
   time:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
