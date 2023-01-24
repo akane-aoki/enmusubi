@@ -78,6 +78,10 @@ ja:
     edit:
       title: 'プロフィール編集'
 
+  dashboards:
+    index:
+      title: 'ダッシュボード'
+
   password_resets:
     new:
       title: 'パスワードリセット申請'
