@@ -47,7 +47,7 @@ ja:
 
   posts:
     index:
-      title: 'がんばり投稿一覧'
+      title: '２人のがんばり記録'
       no_result: '掲示板がありません'
     new:
       title: 'がんばりを伝える'
@@ -58,7 +58,7 @@ ja:
 
   distances:
     index:
-      title: '2人の総移動距離'
+      title: '２人の総移動距離'
 
   meets:
     index:

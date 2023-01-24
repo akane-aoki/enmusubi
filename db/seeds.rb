@@ -7,21 +7,21 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # user
-3.times do
-  User.create(
-      name: Faker::Name.name,
-      email: Faker::Internet.email,
-      password: 'password',
-      password_confirmation: 'password'
-  )
-end
-
-## post
-# 3.times do |n|
-#   body = Faker::Creature::Dog.breed
-#   date = Faker::Date.in_date_period
-#   user = User.find(n + 1)
-#   Post.create!(body: body,
-#                 date: date,
-#                 user: user)
+# 3.times do
+#   User.create(
+#       name: Faker::Name.name,
+#       email: Faker::Internet.email,
+#       password: 'password',
+#       password_confirmation: 'password'
+#   )
 # end
+
+# post
+3.times do |n|
+  body = Faker::Creature::Dog.breed
+  date = Faker::Date.in_date_period
+  user = User.find(n + 1)
+  Post.create!(body: body,
+                date: date,
+                user: user)
+end
