@@ -3,6 +3,8 @@ ja:
     models:
       user: 'ユーザー'
       post: 'がんばり投稿'
+      reward: 'ごほうび'
+      effort: 'がんばること'
     attributes:
       user:
         name: 'ニックネーム'
@@ -24,6 +26,8 @@ ja:
       reward:
         not_meet_day: '会えない日数'
         content: '会えなかった分のごほうび'
+      effort:
+        body: 'がんばること'
     errors:
       models:
         user:

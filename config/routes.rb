@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :distances
   resources :relationships
   resources :rewards
+  resources :efforts
   resources :password_resets, only: %i[new create edit update]
 
   get 'login', to: 'sessions#new'

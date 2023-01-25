@@ -1,22 +1,32 @@
 <%= content_for(:title, t('.title')) %>
-<div class="container pt-3">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1">
+<div class="text-center text-gray-700">
+  <div class="p-4 m-5">
+    <div class="text-4xl">
+      <div class="font-bold"><%= t('.title') %></div>
     </div>
   </div>
+</div>
+<%# 「がんばりを伝える」ボタン %>
+<div class="flex-justify-center">
+  <div class="p-4 m-5">
+    <div class="text-1xl font-bold">
+      <%= link_to t('posts.new.title'), new_post_path, class: 'ms-1 bg-orange-400 hover:bg-orange-300 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded-lg' %>
+    </div>
+  </div>
+</div>
+<div><%= render 'effort_index',{ effort: @effort} %></div>
 
   <!-- 掲示板一覧 -->
-  <div class="row">
-    <div class="col-12">
-      <div class="row">
-        <% if @posts.present? %>
-          <%= render @posts %>
-        <% else %>
-          <p><%= t('.no_result') %></p>
-        <% end %>
-        <%# ページネーション %>
-        <%= paginate @posts %>
-      </div>
+<div class="row">
+  <div class="col-12">
+    <div class="row">
+      <% if @posts.present? %>
+        <%= render @posts %>
+      <% else %>
+        <p><%= t('.no_result') %></p>
+      <% end %>
+      <%# ページネーション %>
+      <%= paginate @posts %>
     </div>
   </div>
 </div>

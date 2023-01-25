@@ -1,0 +1,10 @@
+<div class="flex justify-center">
+  <%= form_with model: effort, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="m-7 text-2xl">
+      <%= f.label :body %><br>
+      <%= f.text_field :body, class: 'p-6' %>
+    </div>
+    <%= f.submit t('defaults.create'), class: 'btn btn-primary' %>
+  <% end %>
+</div>
