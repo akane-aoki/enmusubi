@@ -1,4 +1,6 @@
 class EffortsController < ApplicationController
+  before_action :set_effort, only: %i[edit update]
+
   def index
   end
 
@@ -7,7 +9,7 @@ class EffortsController < ApplicationController
   end
 
   def create
-    @effort = current_user.relationship.efforts.build(effort_params)
+    @effort = current_user.efforts.build(effort_params)
     if @effort.save
       redirect_to efforts_path, success: t('defaults.message.created', item: Effort.model_name.human)
     else
@@ -28,6 +30,10 @@ class EffortsController < ApplicationController
   end
 
   private
+
+  def set_effort
+    @effort = current_user.efforts.find(params[:id])
+  end
 
   def effort_params
     params.require(:effort).permit(:body)

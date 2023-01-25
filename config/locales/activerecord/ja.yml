@@ -3,6 +3,8 @@ ja:
     models:
       user: 'ユーザー'
       post: 'がんばり投稿'
+      reward: 'ごほうび'
+      effort: 'がんばること'
     attributes:
       user:
         name: 'ニックネーム'
