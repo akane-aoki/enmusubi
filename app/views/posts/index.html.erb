@@ -6,6 +6,7 @@
     </div>
   </div>
 </div>
+<%# 「がんばりを伝える」ボタン %>
 <div class="flex-justify-center">
   <div class="p-4 m-5">
     <div class="text-1xl font-bold">
@@ -13,7 +14,7 @@
     </div>
   </div>
 </div>
-<%# <div><%= @user.effort.body %></div> %>
+<div><%= render 'effort_index',{ effort: @effort} %></div>
 
   <!-- 掲示板一覧 -->
 <div class="row">

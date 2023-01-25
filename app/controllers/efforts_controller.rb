@@ -1,9 +1,6 @@
 class EffortsController < ApplicationController
   before_action :set_effort, only: %i[edit update]
 
-  def index
-  end
-
   def new
     @effort = Effort.new
   end
@@ -11,7 +8,7 @@ class EffortsController < ApplicationController
   def create
     @effort = current_user.efforts.build(effort_params)
     if @effort.save
-      redirect_to efforts_path, success: t('defaults.message.created', item: Effort.model_name.human)
+      redirect_to posts_path, success: t('defaults.message.created', item: Effort.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_created', item: Effort.model_name.human)
       render :new
