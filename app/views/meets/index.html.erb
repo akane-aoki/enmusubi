@@ -13,7 +13,7 @@
       <div class="text-center font-bold">次会う日は</div>
     </div>
     <div class="text-center text-gray-700 bg-white rounded-lg text-6xl p-4 m-5">
-      <div class="font-bold">日付</div>
+      <div class="font-bold"><%= @meet.meet_day %></div>
     </div>
     <div class="flex justify-center">
       <button class="bg-orange-400 hover:bg-orange-300 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded-lg"><%= t('defaults.edit') %></button>
@@ -26,8 +26,7 @@
       <div class="text-center font-bold">今まで会った日</div>
     </div>
     <div class="p-4 m-5">
-      <div class="text-center">あ</div>
-      <div class="text-center">あ</div>
+      <div class="text-center"><%= @meets.meet_day %></div>
     </div>
   </div>
 </div>
