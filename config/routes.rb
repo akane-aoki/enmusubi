@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+  get 'profiles/edit'
   root 'static_pages#top'
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
