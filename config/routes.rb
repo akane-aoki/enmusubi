@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'profiles/show'
-  get 'profiles/edit'
   root 'static_pages#top'
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
@@ -13,6 +11,7 @@ Rails.application.routes.draw do
   resources :rewards
   resources :efforts
   resources :password_resets, only: %i[new create edit update]
+  resource :profile, only: %i[show edit update]
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
