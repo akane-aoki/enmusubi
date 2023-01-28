@@ -1,7 +1,8 @@
 class MeetsController < ApplicationController
   def index
-    @meets = Meet.order(meet_day: :desc).page(params[:page])
-  end
+    @meet = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day)
+    @meets = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day) - @meet
+   end
 
   def show
     @meet = Meet.find(params[:id])
