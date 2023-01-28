@@ -22,6 +22,12 @@ ja:
       sent_reset_password: "パスワードリセット手順を送信しました"
       updated_password: "パスワードを変更しました"
 
+  time:
+    formats:
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"
+
   shared:
     header:
       profile: "プロフィール"
@@ -77,12 +83,6 @@ ja:
   efforts:
     new:
       title: '私のがんばること'
-
-  time:
-    formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
-      long: "%Y/%m/%d %H:%M"
-      short: "%m/%d %H:%M"
 
   profiles:
     show:

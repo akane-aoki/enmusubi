@@ -1,13 +1,12 @@
 class MeetsController < ApplicationController
-  before_action :set_meet, only: %i[edit update destroy]
+  before_action :set_user, only: %i[edit update destroy]
 
   def index
-    @meet = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day)
-    @meets = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day) - @meet
-   end
+    meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1)
+    @meet = meet_arr.pluck(:meet_day).first
 
-  def show
-    @meet = Meet.find(params[:id])
+    meets_arr1 = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day)
+    @meets = meets_arr1
   end
 
   def edit; end
@@ -45,12 +44,12 @@ class MeetsController < ApplicationController
 
   private
 
-  def meet_params
-    params.require(:meet).permit(:meet_day, :status)
+  def set_user
+    @meet = Meet.find(params[:id])
+    @meet.relationship_id = current_user.relationship_id
   end
 
-  def set_meet
-    @relationship = current_user.relationship
-    @meet = @relationship.meet.find(params[:id])
+  def meet_params
+    params.require(:meet).permit(:meet_day, :status)
   end
 end
