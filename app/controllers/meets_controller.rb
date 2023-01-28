@@ -6,9 +6,6 @@ class MeetsController < ApplicationController
     @meet = meet_arr.pluck(:meet_day).first
 
     meets_arr1 = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day)
-    # meets_arr2 = meets_arr1.each do |meets|
-    #   meets
-    # end
     @meets = meets_arr1
   end
 
