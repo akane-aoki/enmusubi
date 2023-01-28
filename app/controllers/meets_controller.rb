@@ -17,8 +17,10 @@ class MeetsController < ApplicationController
   end
 
   def create
-    @relationship = current_user.relationship
-    @meet = @relationship.meet.build(meet_params)
+    # @relationship = current_user.relationship_id
+    @meet = Meet.new(meet_params)
+    @meet.relationship_id = current_user.relationship_id
+
     if @meet.save
       redirect_to meets_path, success: t('defaults.message.created', item: Meet.model_name.human)
     else
