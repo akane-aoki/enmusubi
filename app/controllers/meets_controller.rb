@@ -1,4 +1,6 @@
 class MeetsController < ApplicationController
+  before_action :set_meet, only: %i[edit update destroy]
+
   def index
     @meet = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day)
     @meets = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day) - @meet
@@ -15,7 +17,10 @@ class MeetsController < ApplicationController
   end
 
   def create
-    @meet = @relationship.meets.build(meet_params)
+    # @relationship = current_user.relationship_id
+    @meet = Meet.new(meet_params)
+    @meet.relationship_id = current_user.relationship_id
+
     if @meet.save
       redirect_to meets_path, success: t('defaults.message.created', item: Meet.model_name.human)
     else
@@ -42,5 +47,10 @@ class MeetsController < ApplicationController
 
   def meet_params
     params.require(:meet).permit(:meet_day, :status)
+  end
+
+  def set_meet
+    @relationship = current_user.relationship
+    @meet = @relationship.meet.find(params[:id])
   end
 end
