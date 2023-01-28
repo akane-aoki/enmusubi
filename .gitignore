@@ -37,3 +37,5 @@ vendor/bundle
 /node_modules
 
 /public/uploads
+
+db/*.sqlite3
