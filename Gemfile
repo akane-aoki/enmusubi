@@ -51,7 +51,8 @@ gem 'carrierwave'
 
 gem 'font-awesome-sass'
 
-gem 'hirb', '~> 0.7.3'
+# コンソール出力結果を表にする
+gem 'hirb'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

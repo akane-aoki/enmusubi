@@ -2,18 +2,14 @@ class MeetsController < ApplicationController
   before_action :set_user, only: %i[edit update destroy]
 
   def index
-    # @user = User.includes(:relationship)
-    @meet = Relationship.joins(:user, :meet).where(relationship_id: current_user.relationship_id).select(:meet_day).limit(1)
-    # @meet = Meet.find_by(relationship_id: current_user.relationship_id)
+    meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1)
+    @meet = meet_arr.pluck(:meet_day).first
 
-    # @meet = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day)
-    # @meet = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day)
-    # @meets1 = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day) - @meet
-    @meets = @meets1
-  end
-
-  def show
-    @meet = Meet.find(params[:id])
+    meets_arr1 = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day)
+    # meets_arr2 = meets_arr1.each do |meets|
+    #   meets
+    # end
+    @meets = meets_arr1
   end
 
   def edit; end

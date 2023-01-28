@@ -381,7 +381,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2)
   faker (~> 3.1)
   font-awesome-sass
-  hirb (~> 0.7.3)
+  hirb
   importmap-rails
   jbuilder
   jsbundling-rails
