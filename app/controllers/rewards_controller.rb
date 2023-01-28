@@ -8,7 +8,8 @@ class RewardsController < ApplicationController
   end
 
   def create
-    @reward = current_user.relationship.rewards.build(reward_params)
+    @reward = Reward.new(reward_params)
+    @reward.relationship_id = current_user.relationship_id
     if @reward.save
       redirect_to rewards_path, success: t('defaults.message.created', item: Reward.model_name.human)
     else
