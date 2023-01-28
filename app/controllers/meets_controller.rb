@@ -1,4 +1,6 @@
 class MeetsController < ApplicationController
+  before_action :set_user, only: %i[edit update destroy]
+
   def index
     @meet = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day)
     @meets = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day) - @meet
@@ -42,6 +44,11 @@ class MeetsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @meet = Meet.find(params[:id])
+    @meet.relationship_id = current_user.relationship_id
+  end
 
   def meet_params
     params.require(:meet).permit(:meet_day, :status)

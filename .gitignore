@@ -38,4 +38,5 @@ vendor/bundle
 
 /public/uploads
 
-db/*.sqlite3
+db/enmusubi_development.sqlite3
+db/enmusubi_test.sqlite3
