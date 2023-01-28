@@ -51,6 +51,8 @@ gem 'carrierwave'
 
 gem 'font-awesome-sass'
 
+gem 'hirb', '~> 0.7.3'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

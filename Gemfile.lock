@@ -150,6 +150,7 @@ GEM
     globalid (1.0.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
+    hirb (0.7.3)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -380,6 +381,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2)
   faker (~> 3.1)
   font-awesome-sass
+  hirb (~> 0.7.3)
   importmap-rails
   jbuilder
   jsbundling-rails
