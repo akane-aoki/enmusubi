@@ -54,6 +54,8 @@ gem 'font-awesome-sass'
 # コンソール出力結果を表にする
 gem 'hirb'
 
+gem 'faker', '~> 3.1'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -82,8 +84,6 @@ group :development, :test do
 
   # Table/Schema
   gem 'annotate', '~> 3.2'
-
-  gem 'faker', '~> 3.1'
 end
 
 group :development do
