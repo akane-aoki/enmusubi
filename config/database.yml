@@ -83,7 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: cldh3kinz00in9try86swfmmi
-  username: cldh3kinx00j|9try56tk4qe2
+  database: cldh8h4qz00kk9try15jd7ijo
+  username: cldh8h4qy00ki9trydqmwa24t
   password: <%= ENV["ENMUSUBI_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
