@@ -83,6 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: enmusubi_production.sqlite3
+  adapter: postgresql
+  database: db/enmusubi_production.postgresql
   username: enmusubi
   password: <%= ENV["ENMUSUBI_DATABASE_PASSWORD"] %>

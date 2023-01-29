@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "private": "true",
+  "name": "n",
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
     "autoprefixer": "^10.4.13",
@@ -13,5 +13,10 @@
   "scripts": {
     "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:akane-aoki/enmusubi.git",
+  "author": "akane-aoki <okaka3080annietomorrow@gmail.com>",
+  "license": "MIT"
 }
