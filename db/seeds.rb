@@ -56,7 +56,7 @@ Reward.create(
 )
 
 # efforts
-Efforts.create(
-  body: ,"筋トレ"
+Effort.create(
+  body: "筋トレ",
   user_id: 1
 )
