@@ -2,11 +2,11 @@ class MeetsController < ApplicationController
   before_action :set_user, only: %i[edit update destroy]
 
   def index
-    meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1)
-    @meet = meet_arr.pluck(:meet_day).first
+    meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day)
+    @meet = meet_arr.first
 
-    meets_arr1 = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day)
-    @meets = meets_arr1
+    @meets1 = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day)
+    @meets = @meets1 - @meet
   end
 
   def edit; end
