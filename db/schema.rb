@@ -11,10 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 7) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.text "body", null: false
-    t.integer "user_id", null: false
-    t.integer "post_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -23,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 7) do
 
   create_table "efforts", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_efforts_on_user_id"
@@ -32,17 +35,17 @@ ActiveRecord::Schema[7.0].define(version: 7) do
   create_table "meets", force: :cascade do |t|
     t.date "meet_day", null: false
     t.integer "status"
-    t.integer "relationship_id", null: false
+    t.bigint "relationship_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["relationship_id"], name: "index_meets_on_relationship_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text "body", limit: 65535
+    t.text "body"
     t.date "date", null: false
     t.string "image"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -56,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 7) do
   create_table "rewards", force: :cascade do |t|
     t.integer "not_meet_day", null: false
     t.string "content", null: false
-    t.integer "relationship_id", null: false
+    t.bigint "relationship_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["relationship_id"], name: "index_rewards_on_relationship_id"
@@ -69,7 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 7) do
     t.string "salt"
     t.string "address"
     t.string "avatar"
-    t.integer "relationship_id"
+    t.bigint "relationship_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
