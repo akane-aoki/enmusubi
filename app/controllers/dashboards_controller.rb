@@ -18,7 +18,15 @@ class DashboardsController < ApplicationController
 
     @day_count = (@meet - today).to_i
 
+    #effortsモデル
+    my_effort_arr = Effort.where(user_id: current_user.id).pluck(:body)
+    @my_effort = my_effort_arr[0]
+
     # rewardsモデル
-    @my_reward = Reward.where(relationship_id: current_user.relationship_id).pluck(:content)
+    reward_arr = Reward.where(relationship_id: current_user.relationship_id).pluck(:content)
+    @our_reward = reward_arr[0]
+
+    not_meet_day_arr = Reward.where(relationship_id: current_user.relationship_id).pluck(:not_meet_day)
+    @not_meet_day = not_meet_day_arr[0]
   end
 end
