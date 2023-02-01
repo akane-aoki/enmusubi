@@ -27,8 +27,10 @@
     </div>
     <div class="p-4 m-5">
       <div class="text-center">
-        <% @meets.each do |meets| %>
-          <ul><%= l meets %></ul>
+        <% if @meets %>
+          <% @meets.each do |meets| %>
+            <ul><%= l meets %></ul>
+          <% end %>
         <% end %>
       </div>
     </div>
