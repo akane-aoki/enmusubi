@@ -7,6 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # relationship
+
+puts "start"
+
 2.times do
   Relationship.create
 end
@@ -67,3 +70,5 @@ Effort.create(
   body: "筋トレ",
   user_id: 1
 )
+
+puts "end"
