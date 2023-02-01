@@ -43,9 +43,16 @@ end
 end
 
 # meet
+4.times do |n|
+  Meet.create(
+      meet_day: Faker::Date.between(from: 30.days.ago, to: Date.today),
+      relationship_id: 1
+  )
+end
+
 Meet.create(
-    meet_day: Faker::Date.between(from: 30.days.ago, to: Date.today),
-    relationship_id: 1
+  meet_day: "2023-03-22",
+  relationship_id: 1
 )
 
 # reward
