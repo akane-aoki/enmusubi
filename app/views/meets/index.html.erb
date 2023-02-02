@@ -17,7 +17,7 @@
         <% if @meet %>
           <%= l @meet %>
         <% else %>
-          <%= まだ決まっていません %>
+          まだ決まっていません
         <% end %>
       </div>
     </div>
@@ -37,6 +37,8 @@
           <% @meets.each do |meets| %>
             <ul><%= l meets %></ul>
           <% end %>
+        <% else %>
+          今まで会った日はまだありません
         <% end %>
       </div>
     </div>

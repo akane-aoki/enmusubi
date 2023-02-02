@@ -5,7 +5,9 @@ class MeetsController < ApplicationController
     @meet = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day).first
 
     meets_arr1 = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day)
-    @meets = meets_arr1.last(meets_arr1.length - 1)
+    if @meets
+      @meets = meets_arr1.last(meets_arr1.length - 1)
+    end
   end
 
   def edit; end
