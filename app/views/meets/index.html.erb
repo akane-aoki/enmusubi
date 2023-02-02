@@ -13,7 +13,13 @@
       <div class="text-center font-bold">次会う日は</div>
     </div>
     <div class="text-center text-gray-700 bg-white rounded-lg text-6xl p-4 m-5">
-      <div class="font-bold"><%= l @meet %></div>
+      <div class="font-bold">
+        <% if @meet %>
+          <%= l @meet %>
+        <% else %>
+          <%= まだ決まっていません %>
+        <% end %>
+      </div>
     </div>
     <div class="flex justify-center">
       <%# <%= link_to t('defaults.edit'), edit_meet_path(meet_attr.id), class: "bg-orange-400 hover:bg-orange-300 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded-lg" %> %>
