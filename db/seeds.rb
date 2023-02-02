@@ -74,7 +74,6 @@ user = User.create!(
   relationship_id: 1
 )
 puts "#{user.name}を作成しました"
-end
 
 post = Post.create!(
   body: "花子ががんばったことだよ〜",

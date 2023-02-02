@@ -1,6 +1,10 @@
 class RewardsController < ApplicationController
   def index
+    reward_arr = Reward.where(relationship_id: current_user.relationship_id).pluck(:content)
+    @our_reward = reward_arr[0]
 
+    not_meet_day_arr = Reward.where(relationship_id: current_user.relationship_id).pluck(:not_meet_day)
+    @not_meet_day = not_meet_day_arr[0]
   end
 
   def new
