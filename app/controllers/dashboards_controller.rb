@@ -16,7 +16,9 @@ class DashboardsController < ApplicationController
     meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1)
     @meet = meet_arr.pluck(:meet_day).first
 
-    @day_count = (@meet - today).to_i
+    if @meet
+      @day_count = (@meet - today).to_i
+    end
 
     #effortsモデル
     my_effort_arr = Effort.where(user_id: current_user.id).pluck(:body)
