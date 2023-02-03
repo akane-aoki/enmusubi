@@ -15,4 +15,17 @@ class SessionsController < ApplicationController
     logout
     redirect_to login_path, success: t('.success')
   end
+
+  def guest_login
+    @guest_user = User.create(
+    name: 'ゲスト',
+    email: SecureRandom.alphanumeric(15) + "@email.com",
+    password: 'password',
+    password_confirmation: 'password'
+    # address: ''
+    # relationship_id: SecureRandom.random_number(1 << 64) 
+    )
+    auto_login(@guest_user)
+    redirect_to dashboards_path, success: 'ゲストとしてログインしました'
+  end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static_pages#top'
+  root 'top_pages#top'
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
   resources :posts do
@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
+  get 'guest_login', to: 'sessions#guest_login'
 end
