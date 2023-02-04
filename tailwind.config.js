@@ -11,7 +11,7 @@ module.exports = {
         // 'カラー名': 'カラーコード'
         'akane': '#b7282e',
         'oribe': '#125115',
-        'syuiro': '#EA5506',
+        'syuiro': '#EA5506'
       },
     },
   },
