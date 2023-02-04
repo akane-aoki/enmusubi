@@ -1,0 +1,37 @@
+<div class="navbar bg-white">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <label tabindex="0" class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+      </label>
+      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+        <li><%= link_to "会う日の設定", meets_path, class:"justify-between" %></li>
+        <li><%= link_to "2人のがんばりを見る", posts_path, class:"justify-between" %></li>
+        <li>
+          <%# <% if @reward %>
+            <%# <%= link_to "ごほうびの編集", edit_reward_path, class:"justify-between" %>
+          <%# <% else %>
+            <%= link_to "ごほうびの設定", new_reward_path, class:"justify-between" %></li>
+          <%# <% end %>
+        <li><%= link_to "総移動距離の設定", distances_path, class:"justify-between" %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-center">
+    <%= link_to "遠結び", dashboards_path, class:"btn btn-ghost normal-case text-xl" %>
+  </div>
+  <div class="navbar-end">
+    <div class="dropdown dropdown-end">
+      <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+        <div class="w-10 rounded-full">
+          <%= image_tag current_user.avatar_url, class: 'rounded-circle', size: '50x50' %>
+        </div>
+      </label>
+      <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+        <li><%= link_to "プロフィール", profile_path, class:"justify-between" %></li>
+        <li><a>恋人を登録する</a></li>
+        <li><a>ログアウト</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
