@@ -1,0 +1,38 @@
+<tr id="comment-<%= comment.id %>">
+  <td style="width: 60px">
+    <%= image_tag comment.user.avatar_url, class: 'rounded-circle', size: '50x50' %>
+  </td>
+  <td>
+    <h3 class="small"><%= comment.user.name %></h3>
+    <div id="js-comment-<%= comment.id %>">
+      <%= simple_format(comment.body) %>
+    </div>
+    <div id="js-textarea-comment-box-<%= comment.id %>" style="display: none;">
+      <textarea id="js-textarea-comment-<%= comment.id %>" class="form-control mb-1"><%= comment.body %></textarea>
+      <button class="btn btn-light js-button-edit-comment-cancel" data-comment-id="<%= comment.id %>">キャンセル</button>
+      <button class="btn btn-success js-button-comment-update" data-comment-id="<%= comment.id %>">更新</button>
+    </div>
+  </td>
+
+<%# コメント %>
+  <% if current_user.own?(comment) %>
+    <td class="action">
+      <ul class="list-inline justify-content-center" style="float: right;">
+        <li class="list-inline-item">
+          <a href=""><i class='js-edit-comment-button' data-comment-id="<%= comment.id %>" data-remote: true>
+            <%= icon('far', 'pen-to-square') %>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <%= button_to comment_path(comment),
+                      class: 'js-delete-comment-button',
+                      data: { confirm: t('defaults.message.delete_confirm') },
+                      method: :delete,
+                      remote: true do %>
+            <%= icon 'fa', 'trash' %>
+          <% end %>
+        </li>
+      </ul>
+    </td>
+  <% end %>
+</tr>
