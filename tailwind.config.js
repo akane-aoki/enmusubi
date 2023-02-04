@@ -5,15 +5,25 @@ module.exports = {
     './app/assets/stylesheets/*.css',
     './app/javascript/**/*.js'
   ],
+  theme: {
+    extend: {
+      colors: {
+        // 'カラー名': 'カラーコード'
+        'akane': '#b7282e',
+        'oribe': '#125115',
+        'syuiro': '#EA5506',
+      },
+    },
+  },
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
         mytheme: {
-          "primary": "#8C0327",
+          "primary": "#b7282e",
           "secondary": "#D85251",
           "accent": "#D59B6A",
-          "neutral": "#826A5C",
+          "neutral": "#D59B6A",
           "base-100": "#F1F1F1",
           "info": "#42ADBB",
           "success": "#499380",
@@ -21,8 +31,7 @@ module.exports = {
           "error": "#DF1A2F",
         },
       },
-      "dark",
-      "cupcake",
+      "dark"
     ],
   },
 }

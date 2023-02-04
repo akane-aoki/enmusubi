@@ -7,22 +7,20 @@
   </div>
 </div>
 <%# 「がんばりを伝える」ボタン %>
-<div class="flex justify-center">
-  <div class="p-4 m-5">
-    <div class="text-1xl font-bold">
-      <%= link_to t('posts.new.title'), new_post_path, class: 'ms-1 bg-orange-400 hover:bg-orange-300 text-white font-bold py-2 px-4 border-b-4 border-orange-700 hover:border-orange-500 rounded-lg' %>
-    </div>
+<div class="flex justify-center p-4 m-5">
+  <div class="text-1xl font-bold">
+    <%= link_to t('posts.new.title'), new_post_path, class: 'btn' %>
   </div>
+</div>
 <%# # がんばること %>
-  <div>
-    <% if @effort %>
-      <%= render 'effort',{ effort: @effort} %>
-    <% end %>
-  </div>
+<div class="justify-center p-4 m-5">
+  <% if @effort %>
+    <%= render 'effort',{ effort: @effort} %>
+  <% end %>
 </div>
 
   <!-- 掲示板一覧 -->
-<div class="row flex justify-center">
+<div class="justify-center">
   <div class="col-12">
     <div class="row">
       <% if @posts.present? %>
