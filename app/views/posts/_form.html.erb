@@ -1,20 +1,20 @@
 <div class="flex justify-center">
   <%= form_with model: post, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div class="">
-      <%= f.label :date %>
-      <%= f.date_field :date, class: 'form-control', rows: 10 %>
+    <div>
+      <%= f.label :date, class:"font-bold flex justify-center text-2xl" %>
+      <%= f.date_field :date, class: 'justify-center', rows: 10 %>
     </div>
     <div class="">
-      <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control', rows: 10 %>
+      <%= f.label :body, class:"font-bold flex justify-center text-2xl" %>
+      <%= f.text_area :body, class: 'justify-center', rows: 10 %>
     </div>
     <div class="">
-      <%= f.label :image %>
-      <%= f.file_field :image, class: 'form-control mb-3', accept: 'image/*', id: :post_img %>
+      <%= f.label :image, class:"font-bold flex justify-center text-2xl" %>
+      <%= f.file_field :image, class: 'justify-center mb-3', accept: 'image/*', id: :post_img %>
       <%= f.hidden_field :image_cache %>
     </div>
-    <div class='mt-3 mb-3'>
+    <div class='mt-3 mb-3 flex justify-center'>
       <% if post.image? %>
         <%= image_tag post.image.url, id: 'img_prev', size: '100x100' %>
       <% end %>
@@ -37,6 +37,6 @@
       });
     </script>
 
-    <%= f.submit t('defaults.create'), class: 'btn btn-primary' %>
+    <%= f.submit t('defaults.create'), class: 'btn' %>
   <% end %>
 </div>
