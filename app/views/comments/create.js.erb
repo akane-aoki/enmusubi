@@ -1,0 +1,15 @@
+<%# 既に表示されているエラーメッセージがあった場合は削除する %>
+$("#error_messages").remove()
+
+<%# コメント作成処理の結果によって処理を分岐させる %>
+<% if @comment.errors.present? %>
+  <%# エラーがある、処理失敗時にはエラーメッセージのパーシャルを表示させる %>
+  $("#new_comment").prepend("<%=j(render('shared/error_messages', object: @comment)) %>")
+
+<% else %>
+  <%# エラーがない、処理成功時には作成されたコメント内容をHTML要素として追加する %>
+  $("#js-table-comment").prepend("<%= j(render('comment', comment: @comment)) %>")
+  
+  <%# コメント入力フォームのテキストは表示する必要がないので、空文字に置き換えて内容をクリアする %>
+  $("#js-new-comment-body").val('')
+<% end %>

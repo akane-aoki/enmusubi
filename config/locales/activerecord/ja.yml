@@ -21,6 +21,8 @@ ja:
         body: 'がんばったこと'
         image: '画像'
         published_at: '公開日'
+      comment:
+        body: 'コメント'
       meet:
         meet_day: '会う日'
       reward:

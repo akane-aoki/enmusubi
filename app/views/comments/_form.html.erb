@@ -1,0 +1,11 @@
+<!-- コメントフォーム -->
+<div class="row mb-3 flex justify-center">
+  <div class="col-lg-8 offset-lg-2">
+    <%= form_with model: comment, url: [post, comment], id: "new_comment", local: false do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :body %>
+      <%= f.text_area :body ,class: "form-control mb-3", id: 'js-new-comment-body', rows: 4 %>
+      <%= f.submit t('defaults.post'), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

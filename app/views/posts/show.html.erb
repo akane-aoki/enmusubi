@@ -28,7 +28,9 @@
   </div>
 </article>
 
+<div class="flex justify-center">
   <!-- コメントフォーム -->
-  <%# <%= render 'comments/form', { post: @post, comment: @comment } %> %>
+  <%= render 'comments/form', { post: @post, comment: @comment } %>
   <!-- コメントエリア -->
-  <%# <%= render 'comments/comments',{ comments: @comments } %> %>
+  <%= render 'comments/comments',{ comments: @comments } %>
+</div>
