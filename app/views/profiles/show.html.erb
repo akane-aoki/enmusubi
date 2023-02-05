@@ -22,12 +22,14 @@
           <th scope="row"><%= t(User.human_attribute_name(:address)) %></th>
           <td><%= current_user.address %></td>
         </tr>
-        <% if @partner %>
-          <tr>
-            <th scope="row">恋人の<%= t(User.human_attribute_name(:name)) %></th>
-            <td><%= @partner.name %></td>
-          </tr>
-        <% end %>
+        <tr>
+          <th scope="row">恋人の<%= t(User.human_attribute_name(:name)) %></th>
+          <% if @partner %>
+            <td><%= @partner %></td>
+          <% else %>
+            <td>恋人がまだ登録されていません</td>
+          <% end %>
+        </tr>
         <tr>
           <th scope="row"><%= t(User.human_attribute_name(:avatar)) %></th>
           <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '100x100' %></td>
