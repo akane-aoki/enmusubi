@@ -2,7 +2,9 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
 
   def show
-    @partner = User.find(current_user.relationship_id)
+    if @partner
+      @partner = User.find(current_user.relationship_id)
+    end
   end
 
   def edit
