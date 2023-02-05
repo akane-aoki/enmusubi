@@ -1,18 +1,29 @@
 <div class="col-sm-12 col-lg-4 mb-3 bg-white rounded-lg p-4 m-5">
   <div id="post-id-<%= post.id %>">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">
-          <%= l post.date, format: :long %>
-        </h4>
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="px-10 mx-20">
+        <td style="width: 60px">
+          <%= image_tag post.user.avatar_url, class: 'rounded-circle', size: '70x70' %>
+        </td>
+      </div>
+      <div class="text-1xl">
+        <%= l post.date, format: :long %>
+      </div>
+      <div class="">
         <% if current_user.own?(post) %>
           <%= render 'crud_menus', post: post %>
         <% end %>
-        <p class="card-text"><%= post.body %></p>
-        <% if post.image? %>  <!-- アップロード画像がある場合に実行する -->
-          <%= image_tag post.image.url, class: 'card-img-top', size: '300x200' %><!-- boardインスタンスの画像ファイルのURLを取得し表示 -->
-        <% end %>
       </div>
+    </div>
+    <div class="text-center font-bold text-2xl">
+      <%= link_to post_path(post) do %>
+        <%= post.body %>
+      <% end %>
+    </div>
+    <div class="flex justify-center">
+      <% if post.image? %>  <!-- アップロード画像がある場合に実行する -->
+        <%= image_tag post.image.url, class: 'card-img-top', size: '300x200' %><!-- boardインスタンスの画像ファイルのURLを取得し表示 -->
+      <% end %>
     </div>
   </div>
 </div>
