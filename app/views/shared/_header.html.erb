@@ -24,13 +24,17 @@
     <div class="dropdown dropdown-end">
       <label tabindex="0" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">
-          <%= image_tag current_user.avatar_url, class: 'rounded-circle', size: '50x50' %>
+          <% if current_user.avatar_url %>
+            <%= image_tag current_user.avatar_url, class: 'rounded-circle', size: '50x50' %>
+          <% else %>
+            <%= image_tag 'wanko.png', class: 'rounded-circle', size: '50x50' %>
+          <% end %>
         </div>
       </label>
       <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li><%= link_to "プロフィール", profile_path, class:"justify-between" %></li>
         <li><a>恋人を登録する</a></li>
-        <li><a>ログアウト</a></li>
+        <li><%= link_to "ログアウト", logout_path, class:"justify-between", data: { turbo_method: :delete, turbo_confirm: t('defaults.message.logout')} %></li>
       </ul>
     </div>
   </div>

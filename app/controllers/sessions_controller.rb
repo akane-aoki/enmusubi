@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to login_path, success: t('.success')
+    redirect_to login_path, success: t('.success', item: User.model_name.human), status: :see_other
   end
 
   def guest_login

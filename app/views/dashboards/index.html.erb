@@ -12,7 +12,7 @@
     <% else %>
       <div class="font-bold text-2xl">次会う日がまだ決まっていません</div>
       <%= link_to new_meet_path do %>
-        <button class="btn">次会う日を決める</button>
+        <button class="btn btn-accent">次会う日を決める</button>
       <% end %>
     <% end %>
   </div>
@@ -24,14 +24,14 @@
     <% else %>
       <div class="font-bold text-2xl">会えない間にがんばることがまだ決まっていません</div>
       <%= link_to new_effort_path do %>
-        <button class="btn m-2">がんばることを決める</button>
+        <button class="btn btn-accent m-2">がんばることを決める</button>
       <% end %><br>
     <% end %>
     <%= link_to new_post_path do %>
-      <button class="btn m-2">がんばりを伝える</button>
+      <button class="btn btn-accent m-2">がんばりを伝える</button>
     <% end %>
     <%= link_to posts_path do %>
-      <button class="btn m-2">2人のがんばりを見る</button>
+      <button class="btn btn-accent m-2">2人のがんばりを見る</button>
     <% end %>
   </div>
 
@@ -44,13 +44,13 @@
         <div class="font-bold text-4xl"><%= @our_reward %></div>
         <div>のごほうびがもらえます</div>
         <%= link_to edit_reward_path do %>
-          <button class="btn m-2">ごほうびを編集する</button>
+          <button class="btn btn-accent m-2">ごほうびを編集する</button>
         <% end %>
       </div>
     <% else %>
       <div class="font-bold text-2xl">ごほうびはまだ決まっていません</div>
       <%= link_to new_reward_path do %>
-        <button class="btn m-2">ごほうびを決める</button>
+        <button class="btn btn-accent m-2">ごほうびを決める</button>
       <% end %>
     <% end %>
   </div>
@@ -58,7 +58,7 @@
   <div class="bg-amber-100 rounded-lg p-4 m-5">
     <div class="text-2xl font-bold">総移動距離　km</div>
     <%= link_to distances_path do %>
-      <button class="btn m-2">くわしく見る</button>
+      <button class="btn btn-accent m-2">くわしく見る</button>
     <% end %>
   </div>
 </div>

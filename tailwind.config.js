@@ -8,30 +8,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // 'カラー名': 'カラーコード'
-        'akane': '#b7282e',
-        'oribe': '#125115',
-        'syuiro': '#EA5506'
+        akane: '#b7282e',
+        oribe: '#125115',
+        syuiro: '#EA5506'
       },
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: [
-      {
-        mytheme: {
-          "primary": "#b7282e",
-          "secondary": "#D85251",
-          "accent": "#D59B6A",
-          "neutral": "#D59B6A",
-          "base-100": "#F1F1F1",
-          "info": "#42ADBB",
-          "success": "#499380",
-          "warning": "#E97F14",
-          "error": "#DF1A2F",
-        },
-      },
-      "dark"
-    ],
+    themes: ["cupcake"
+      // {
+      //   cupcake: {
+      //     // ...require("daisyui/src/colors/themes")["[data-theme=cupcake]"],
+      //     // primary: "#EEAF3A",
+      //     // "primary-content": "#ffffff", // btn-primaryなどの文字の色
+      //     // "neutral": "#EEAF3A",
+      //     // // "base-100": "#", // 全体の背景色
+      //     // "base-content": "#372f38", // 全体の文字の色
+      //   },
+      // },
+    ,"dark"],
   },
 }

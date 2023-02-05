@@ -3,6 +3,8 @@ ja:
     login: "ログイン"
     register: '登録'
     logout: 'ログアウト'
+    signup: 'アカウント登録'
+    guest_login: 'ゲストログイン'
     create: '作成する'
     post: '投稿'
     update: '更新'
@@ -19,6 +21,7 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: "削除しますか？"
+      logout: "ログアウトしますか？"
       sent_reset_password: "パスワードリセット手順を送信しました"
       updated_password: "パスワードを変更しました"
 
