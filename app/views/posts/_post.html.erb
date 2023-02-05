@@ -1,18 +1,24 @@
 <div class="col-sm-12 col-lg-4 mb-3 bg-white rounded-lg p-4 m-5">
   <div id="post-id-<%= post.id %>">
     <div class="container mx-auto flex justify-between items-center">
-      <div></div>
-      <div class="text-center">
+      <div class="px-10 mx-20">
+        <td style="width: 60px">
+          <%= image_tag post.user.avatar_url, class: 'rounded-circle', size: '70x70' %>
+        </td>
+      </div>
+      <div class="text-1xl">
         <%= l post.date, format: :long %>
       </div>
-      <div class="float-right">
+      <div class="">
         <% if current_user.own?(post) %>
           <%= render 'crud_menus', post: post %>
         <% end %>
       </div>
     </div>
     <div class="text-center font-bold text-2xl">
-      <%= post.body %>
+      <%= link_to post_path(post) do %>
+        <%= post.body %>
+      <% end %>
     </div>
     <div class="flex justify-center">
       <% if post.image? %>  <!-- アップロード画像がある場合に実行する -->

@@ -1,12 +1,12 @@
-<ul class="flex ">
-  <li class="">
+<ul class="flex">
+  <li class="px-3">
     <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
-      <%= icon('far', 'pen-to-square') %>
+      <%= icon('far', 'pen-to-square fa-1x') %>
     <% end %>
   </li>
-  <li class="">
+  <li class="px-3">
     <%= link_to post_path(post), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')} do %>
-      <%= icon('fa', 'trash') %>
+      <%= icon('fa', 'trash fa-1x') %>
     <% end %>
   </li>
 </ul>
