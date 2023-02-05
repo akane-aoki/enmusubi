@@ -18,4 +18,13 @@ class User < ApplicationRecord
   def own?(object)
     id == object.user_id
   end
+
+  validate :check_number_of_users
+
+  def check_number_of_users
+    if relationship && relationship.users.count > 2
+      errors.add(:relation, "人数OVERです")
+    end
+  end
+
 end
