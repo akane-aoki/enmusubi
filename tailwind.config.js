@@ -6,28 +6,27 @@ module.exports = {
     './app/javascript/**/*.js'
   ],
   theme: {
-    extends: {
+    extend: {
       colors: {
-        // 'カラー名': 'カラーコード'
-        'akane': '#b7282e',
-        'oribe': '#125115',
-        'syuiro': '#EA5506'
+        akane: '#b7282e',
+        oribe: '#125115',
+        syuiro: '#EA5506'
       },
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: [
-      {
-        cupcake: {
-          ...require("daisyui/src/colors/themes")["[data-theme=cupcake]"],
-          // primary: "#EEAF3A",
-          // "primary-content": "#ffffff", // btn-primaryなどの文字の色
-          // "neutral": "#EEAF3A",
-          // // "base-100": "#", // 全体の背景色
-          // "base-content": "#372f38", // 全体の文字の色
-        },
-      },
+    themes: ["cupcake"
+      // {
+      //   cupcake: {
+      //     // ...require("daisyui/src/colors/themes")["[data-theme=cupcake]"],
+      //     // primary: "#EEAF3A",
+      //     // "primary-content": "#ffffff", // btn-primaryなどの文字の色
+      //     // "neutral": "#EEAF3A",
+      //     // // "base-100": "#", // 全体の背景色
+      //     // "base-content": "#372f38", // 全体の文字の色
+      //   },
+      // },
     ,"dark"],
   },
 }
