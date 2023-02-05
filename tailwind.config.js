@@ -16,16 +16,18 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["cupcake"
+    themes: [cupcake
       // {
-      //   cupcake: {
-      //     // ...require("daisyui/src/colors/themes")["[data-theme=cupcake]"],
-      //     // primary: "#EEAF3A",
+        // cupcake: {
+          // ...require("daisyui/src/colors/themes")["[data-theme=cupcake]"],
+          // btn-ghost: "blue",
+          // "btn-ghost-content": "syuiro",
+          // primary: "#EEAF3A",
       //     // "primary-content": "#ffffff", // btn-primaryなどの文字の色
       //     // "neutral": "#EEAF3A",
       //     // // "base-100": "#", // 全体の背景色
       //     // "base-content": "#372f38", // 全体の文字の色
-      //   },
+        // },
       // },
     ,"dark"],
   },
