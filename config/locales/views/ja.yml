@@ -76,7 +76,7 @@ ja:
       title: '会う日を決める'
 
   rewards:
-    index:
+    show:
       title: '会えなかった分のごほうび'
     new:
       title: '会えなかった分のごほうびを決める'

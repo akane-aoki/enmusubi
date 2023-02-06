@@ -39,11 +39,11 @@
     <% if @reward %>
       <div class="text-2xl">
         <div class="font-bold">会えない日があと<br>
-          <%= @not_meet_day %>日になったら
+          <%= @not_meet_day.not_meet_day %>日になったら
         </div>
-        <div class="font-bold text-4xl"><%= @our_reward %></div>
+        <div class="font-bold text-4xl"><%= @reward.content %></div>
         <div>のごほうびがもらえます</div>
-        <%= link_to edit_reward_path do %>
+        <%= link_to edit_reward_path(@reward) do %>
           <button class="btn btn-accent m-2">ごほうびを編集する</button>
         <% end %>
       </div>

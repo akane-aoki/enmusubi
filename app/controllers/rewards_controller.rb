@@ -1,11 +1,5 @@
 class RewardsController < ApplicationController
-  def index
-    reward_arr = Reward.where(relationship_id: current_user.relationship_id).pluck(:content)
-    @our_reward = reward_arr[0]
-
-    not_meet_day_arr = Reward.where(relationship_id: current_user.relationship_id).pluck(:not_meet_day)
-    @not_meet_day = not_meet_day_arr[0]
-  end
+  before_action :set_user, only: %i[show edit update]
 
   def new
     @reward = Reward.new
@@ -22,6 +16,11 @@ class RewardsController < ApplicationController
     end
   end
 
+  def show
+    @reward = Reward.find_by(relationship_id: current_user.relationship_id)
+    @not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
+  end
+
   def edit; end
 
   def update
@@ -34,6 +33,10 @@ class RewardsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @reward = Reward.find_by(relationship_id: current_user.relationship_id)
+  end
 
   def reward_params
     params.require(:reward).permit(:not_meet_day, :content)
