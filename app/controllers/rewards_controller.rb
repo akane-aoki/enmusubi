@@ -1,13 +1,5 @@
 class RewardsController < ApplicationController
-  before_action :set_user, only: %i[edit update]
-
-  def index
-    reward_arr = Reward.where(relationship_id: current_user.relationship_id).pluck(:content)
-    @reward = reward_arr[0]
-
-    not_meet_day_arr = Reward.where(relationship_id: current_user.relationship_id).pluck(:not_meet_day)
-    @not_meet_day = not_meet_day_arr[0]
-  end
+  before_action :set_user, only: %i[show edit update]
 
   def new
     @reward = Reward.new
@@ -22,6 +14,11 @@ class RewardsController < ApplicationController
       flash.now[:danger] = t('defaults.message.not_created', item: Reward.model_name.human)
       render :new
     end
+  end
+
+  def show
+    @reward = Reward.find_by(relationship_id: current_user.relationship_id)
+    @not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
   end
 
   def edit; end
@@ -39,7 +36,6 @@ class RewardsController < ApplicationController
 
   def set_user
     @reward = Reward.find_by(relationship_id: current_user.relationship_id)
-    # @reward = Reward.find(params[:id])
   end
 
   def reward_params

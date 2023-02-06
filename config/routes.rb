@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy], shallow: true
   end
   resources :meets
-  resources :distances
-  resources :relationships
-  resources :rewards
-  resources :efforts
+  resources :distances, only: %i[index show]
+  resources :relationships, only: %i[new create]
+  resources :rewards, only: %i[new create show edit update]
+  resources :efforts, only: %i[new create edit update]
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
 

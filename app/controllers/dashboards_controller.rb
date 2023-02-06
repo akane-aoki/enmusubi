@@ -25,10 +25,8 @@ class DashboardsController < ApplicationController
     @my_effort = my_effort_arr[0]
 
     # rewardsモデル
-    reward = Reward.find_by(relationship_id: current_user.relationship_id)
-    @our_reward = reward.content
+    @reward = Reward.find_by(relationship_id: current_user.relationship_id)
 
-    not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
-    @not_meet_day = reward.not_meet_day
+    @not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
   end
 end
