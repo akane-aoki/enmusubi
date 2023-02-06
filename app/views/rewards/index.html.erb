@@ -22,10 +22,12 @@
       <div class="text-center font-bold">次会ったときに</div>
     </div>
     <div class="text-center text-gray-700 bg-white rounded-lg text-6xl p-4 m-5">
-      <div class="font-bold"><%= @our_reward %></div>
+      <div class="font-bold"><%= @reward %></div>
     </div>
   </div>
 </div>
 <div class="flex justify-center">
-  <button class="btn btn-accent"><%= t('defaults.edit') %></button>
+  <%= link_to edit_reward_path(@reward) do %>
+    <button class="btn btn-accent"><%= t('defaults.edit') %></button>
+  <% end %>
 </div>

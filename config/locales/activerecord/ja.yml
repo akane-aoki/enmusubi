@@ -41,3 +41,7 @@ ja:
             password_confirmation:
               blank: 'パスワードを再入力してください'
               confirmation: 'パスワードが違います'
+        reward:
+          attributes:
+            password:
+              
