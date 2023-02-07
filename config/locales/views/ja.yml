@@ -86,6 +86,8 @@ ja:
   efforts:
     new:
       title: '私のがんばること'
+    edit:
+      title: 'がんばることを編集する'
 
   profiles:
     show:
