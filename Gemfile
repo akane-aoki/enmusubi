@@ -56,6 +56,8 @@ gem 'hirb'
 
 gem 'faker', '~> 3.1'
 
+gem 'geocoder'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
