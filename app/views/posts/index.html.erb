@@ -14,8 +14,12 @@
 </div>
 <%# # がんばること %>
 <div class="justify-center p-4 m-5">
-  <% if @effort %>
-    <%= render 'effort',{ effort: @effort} %>
+  <% if @my_effort %>
+    <%= render 'effort',{ my_effort: @my_effort} %>
+  <% end %>
+  <br>
+  <% if @partner %>
+    <%= render 'partner_effort',{ partner: @partner, partner_effort: @partner_effort } %>
   <% end %>
 </div>
 
