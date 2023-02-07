@@ -1,14 +1,16 @@
 <%= content_for(:title, t('.title')) %>
 <div class="text-center text-gray-700">
+  <%# meetモデル %>
   <div class="bg-red-100 rounded-lg p-4 m-5">
     <% if @day_count %>
       <div class="font-bold text-2xl">次会える日まで</div>
       <div class="font-bold text-4xl">あと
-        <%= @day_count %>日！
+        <span class="text-syuiro"><%= @day_count %></span>
+        日！
       </div>
-    <%# <%= link_to edit_meet_path(@meet) do %>
-      <%# <button class="btn">次会う日を変更する</button> %>
-    <%# <% end %>
+      <%= link_to meets_path do %>
+        <button class="btn btn-accent m-2">今まで会った日を見る</button>
+      <% end %>
     <% else %>
       <div class="font-bold text-2xl">次会う日がまだ決まっていません</div>
       <%= link_to new_meet_path do %>
@@ -17,6 +19,7 @@
     <% end %>
   </div>
 
+  <%# effortモデル %>
   <div class="bg-cyan-100 rounded-lg p-4 m-5">
     <% if @my_effort %>
       <div class="font-bold text-2xl">会えない間にがんばること</div>
@@ -35,17 +38,19 @@
     <% end %>
   </div>
 
+  <%# rewardモデル %>
   <div class="bg-indigo-100 rounded-lg p-4 m-5">
     <% if @reward %>
       <div class="text-2xl">
-        <div class="font-bold">会えない日があと<br>
-          <%= @not_meet_day.not_meet_day %>日になったら
+        <div class="font-bold">会えない日が<%= @not_meet_day.not_meet_day %>日になったら
         </div>
-        <div class="font-bold text-4xl"><%= @reward.content %></div>
-        <div>のごほうびがもらえます</div>
-        <%= link_to edit_reward_path(@reward) do %>
-          <button class="btn btn-accent m-2">ごほうびを編集する</button>
-        <% end %>
+        <span class="font-bold text-4xl"><%= @reward.content %></span><span>のごほうびがもらえます</span><br>
+        <span class="font-bold text-4xl">前回会った日から<span class="text-syuiro"><%= @reward_count %></span>日経ちました！</span>
+        <div>
+          <%= link_to edit_reward_path(@reward) do %>
+            <button class="btn btn-accent m-2">ごほうびを編集する</button>
+          <% end %>
+        </div>
       </div>
     <% else %>
       <div class="font-bold text-2xl">ごほうびはまだ決まっていません</div>
@@ -55,6 +60,7 @@
     <% end %>
   </div>
 
+  <%# 総移動距離 %>
   <div class="bg-amber-100 rounded-lg p-4 m-5">
     <div class="text-2xl font-bold">総移動距離　km</div>
     <%= link_to distances_path do %>
