@@ -17,8 +17,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 15 }
   validates :email, uniqueness: true, presence: true
 
-  geocoded_by :address, latitude: :lat, longitude: :lon #geocodingを行いたいカラムを指定
-  after_validation :geocode, if: :address_changed? #geocodingするタイミングを指定
+  geocoded_by :address #geocodingを行いたいカラムを指定
+  after_validation :geocode #geocodingするタイミングを指定
 
   def own?(object)
     id == object.user_id

@@ -70,7 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 7) do
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
-    t.string "address"
+    t.integer "address"
     t.float "latitude"
     t.float "longitude"
     t.string "avatar"
