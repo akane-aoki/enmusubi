@@ -41,3 +41,5 @@ vendor/bundle
 
 db/enmusubi_development.sqlite3
 db/enmusubi_test.sqlite3
+
+/.env

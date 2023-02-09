@@ -131,6 +131,10 @@ GEM
     date (3.3.3)
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     e2mmap (0.1.0)
     erubi (1.12.0)
     factory_bot (6.2.1)
@@ -378,6 +382,7 @@ DEPENDENCIES
   capybara (~> 3.38)
   carrierwave
   cssbundling-rails
+  dotenv-rails
   factory_bot_rails (~> 6.2)
   faker (~> 3.1)
   font-awesome-sass
