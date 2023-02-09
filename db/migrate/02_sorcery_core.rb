@@ -6,6 +6,8 @@ class SorceryCore < ActiveRecord::Migration[7.0]
       t.string :crypted_password
       t.string :salt
       t.string :address
+      t.float  :latitude
+      t.float  :longitude
       t.string :avatar
       t.references :relationship, foreign_key: true
 
