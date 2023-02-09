@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend Geocoder::Model::ActiveRecord
+
   authenticates_with_sorcery!
   mount_uploader :avatar, AvatarUploader
 
