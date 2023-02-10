@@ -25,7 +25,7 @@
         <tr>
           <th scope="row">恋人の<%= t(User.human_attribute_name(:name)) %></th>
           <% if @partner %>
-            <td><%= @partner %></td>
+            <td><%= @partner.name %></td>
           <% else %>
             <td>恋人がまだ登録されていません</td>
           <% end %>

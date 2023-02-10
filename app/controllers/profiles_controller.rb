@@ -2,11 +2,11 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
 
   def show
-    partner = User.where.not(id: current_user.id).where(relationship_id: current_user.relationship_id)
-    if partner == []
+    @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
+    if @partner.nil?
       return
-    elsif partner
-      @partner = partner[0][:name]
+    elsif @partner
+      @partner.name
     end
   end
 

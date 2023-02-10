@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
 
   geocoded_by :address #geocodingを行いたいカラムを指定
-  after_validation :geocode #geocodingするタイミングを指定
+  after_validation :geocode, if: :address_changed? #geocodingするタイミングを指定
 
   def own?(object)
     id == object.user_id

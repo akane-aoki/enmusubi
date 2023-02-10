@@ -33,5 +33,10 @@ class DashboardsController < ApplicationController
     end
 
     @not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
+
+    # distances
+    @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
+
+    @distance = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude],[@partner.latitude,@partner.longitude]).round
   end
 end
