@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save && @relationship.save
       @user.update(relationship_id: @relationship.id)
+      Geocoder.search(:address, params: {contorycodes: "ja"})
       auto_login(@user)
       redirect_to dashboards_path, success: 'ユーザー登録が完了しました'
     else

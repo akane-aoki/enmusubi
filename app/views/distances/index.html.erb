@@ -11,16 +11,101 @@
   <div class='row'>
     <div class='col-md-9'>
       <div class="text-center text-gray-700 bg-white rounded-lg text-6xl p-4 m-5">
-        <div class="font-bold">約　km</div>
+        <div class="font-bold">約<%= @total_distances %>km</div>
       </div>
       <div class="p-4 m-5">
-        <div class="text-center">これは、およそ</div>
-        <div class="text-center">までの距離です。</div>
+        <% if @total_distances >= 20038 %>
+          <div class="text-center">これは、およそ</div>
+          <div class="text-center font-bold text-2xl">
+            <% if @total_distances >= 40075 %>
+              地球一周
+            <% elsif @total_distances >= 20038 %>
+              地球半周
+            <% end %>
+          </div>
+          <div class="text-center">の距離に到達しました。</div>
+        <% end %>
+        <% if @total_distances < 20038 %>
+          <div class="text-center">これは、およそ</div>
+          <div class="text-center font-bold text-2xl">東京から
+            <% if @total_distances >= 18374 %>
+              アルゼンチン ブエノスアイレス
+            <% elsif @total_distances >= 17674 %>
+              ブラジル ブラジリア
+            <% elsif @total_distances >= 15495 %>
+              ペルー リマ
+            <% elsif @total_distances >= 14182 %>
+              ベネズエラ カラカス
+            <% elsif @total_distances >= 13187 %>
+              コスタリカ サンホセ
+            <% elsif @total_distances >= 12464 %>
+              中央アフリカ バンギ
+            <% elsif @total_distances >= 11408 %>
+              マダガスカル アンタナナリボ
+            <% elsif @total_distances >= 10923 %>
+              アメリカ ワシントンD.C.
+            <% elsif @total_distances >= 9877 %>
+              イタリア ローマ
+            <% elsif @total_distances >= 9471 %>
+              ベルギー ブリュッセル
+            <% elsif @total_distances >= 9150 %>
+              オーストリア ウィーン
+            <% elsif @total_distances >= 8901 %>
+              ルーマニア ブカレスト
+            <% elsif @total_distances >= 8190 %>
+              スウェーデン ストックホルム
+            <% elsif @total_distances >= 7922 %>
+              オーストラリア キャンベラ
+            <% elsif @total_distances >= 6854 %>
+              スリランカ スリジャヤワルダナプラコッテ
+            <% elsif @total_distances >= 5852 %>
+              インド デリー
+            <% elsif @total_distances >= 4608 %>
+              タイ バンコク
+            <% elsif @total_distances >= 3014 %>
+              モンゴル ウランバートル
+            <% elsif @total_distances >= 2100 %>
+              中国 北京
+            <% elsif @total_distances >= 1554 %>
+              沖縄県 那覇市
+            <% elsif @total_distances >= 1157 %>
+              韓国 ソウル
+            <% elsif @total_distances >= 963 %>
+              鹿児島県 鹿児島市
+            <% elsif @total_distances >= 881 %>
+              福岡県 福岡市
+            <% elsif @total_distances >= 831 %>
+              北海道 札幌市
+            <% elsif @total_distances >= 769 %>
+              山口県 山口市
+            <% elsif @total_distances >= 666 %>
+              愛媛県 松山市
+            <% elsif @total_distances >= 577 %>
+              青森県 青森市
+            <% elsif @total_distances >= 425 %>
+              兵庫県 神戸市
+            <% elsif @total_distances >= 396 %>
+              大阪府 大阪市
+            <% elsif @total_distances >= 27 %>
+              神奈川県 横浜市
+            <% end %>
+          </div>
+          <div class="text-center">までの直線距離に到達しました。</div>
+        <% end %>
       </div>
       <div class="p-4 m-5">
-        <div class="text-center">2人の愛の大きさは</div>
-        <div class="text-center">を超えました。</div>
-      </div>
+        <% if @total_distances >= 1157 %>
+          <div class="text-center">2人の愛の大きさは</div>
+          <div class="text-center font-bold text-2xl">
+            <% if @total_distances >= 40075 %>
+              地球の直径
+            <% elsif @total_distances >= 1157 %>
+              国境
+            <% end %>
+          </div>
+          <div class="text-center">を超えました。</div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

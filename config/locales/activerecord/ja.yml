@@ -11,7 +11,7 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード再入力'
-        address: '住んでいるところ'
+        address: '郵便番号'
         avatar: 'アイコン'
         created_at: '登録日'
       invitation:
