@@ -13,7 +13,8 @@ module.exports = {
       colors: {
         akane: '#b7282e',
         oribe: '#125115',
-        syuiro: '#EA5506'
+        syuiro: '#EA5506',
+        miru: '#5B622E'
       },
     },
   },
