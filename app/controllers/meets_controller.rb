@@ -47,8 +47,7 @@ class MeetsController < ApplicationController
   private
 
   def set_user
-    @meet = Meet.find(params[:id])
-    @meet.relationship_id = current_user.relationship_id
+    @meet = Meet.find_by(relationship_id: current_user.relationship_id)
   end
 
   def meet_params
