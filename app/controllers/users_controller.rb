@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login, only: %i[new create]
+
   def new
     @relationship = Relationship.new
     @user = User.new
@@ -18,6 +20,8 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :avatar_cache, :address)

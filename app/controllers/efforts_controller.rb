@@ -29,7 +29,8 @@ class EffortsController < ApplicationController
   private
 
   def set_effort
-    @effort = current_user.efforts.find(params[:id])
+    # @effort = current_user.efforts.find(params[:id])
+    @effort = Effort.find_by(user: current_user)
   end
 
   def effort_params

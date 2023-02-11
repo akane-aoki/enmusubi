@@ -10,8 +10,7 @@ class DashboardsController < ApplicationController
     end
 
     # effortsモデル
-    my_effort_arr = Effort.where(user_id: current_user.id).pluck(:body)
-    @my_effort = my_effort_arr[0]
+    @my_effort = Effort.find_by(user: current_user)
 
     # rewardsモデル
     @reward = Reward.find_by(relationship_id: current_user.relationship_id)
