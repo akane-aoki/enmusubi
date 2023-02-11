@@ -1,5 +1,5 @@
 <%= content_for(:title, t('.title')) %>
-<div class="text-center text-gray-700">
+<div class="text-center">
   <%# meetモデル %>
   <div class="bg-white rounded-lg p-4 m-5">
     <% if @day_count %>
@@ -30,6 +30,9 @@
         <button class="btn btn-accent m-2">がんばることを決める</button>
       <% end %><br>
     <% end %>
+    <%= link_to edit_effort_path(@my_effort) do %>
+      <button class="btn btn-accent m-2">がんばることを変更する</button>
+    <% end %><br>
     <%= link_to new_post_path do %>
       <button class="btn btn-accent m-2">がんばりを伝える</button>
     <% end %>

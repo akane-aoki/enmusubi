@@ -6,11 +6,15 @@ module.exports = {
     './app/javascript/**/*.js'
   ],
   theme: {
+    fontFamily: {
+      'tsuku': ['TsukuARdGothic-Regular','sans-serif']
+    },
     extend: {
       colors: {
         akane: '#b7282e',
         oribe: '#125115',
-        syuiro: '#EA5506'
+        syuiro: '#EA5506',
+        miru: '#5B622E'
       },
     },
   },
