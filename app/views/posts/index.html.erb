@@ -1,5 +1,5 @@
 <%= content_for(:title, t('.title')) %>
-<div class="text-center text-gray-700">
+<div class="text-center">
   <div class="p-3 m-2">
     <div class="text-4xl">
       <div class="font-bold"><%= t('.title') %></div>
@@ -13,7 +13,7 @@
   </div>
 </div>
 <%# # がんばること %>
-<div class="justify-center p-4 m-5">
+<div class="p-4 m-5">
   <% if @my_effort %>
     <%= render 'effort',{ my_effort: @my_effort} %>
   <% end %>
@@ -24,16 +24,10 @@
 </div>
 
   <!-- がんばり記録一覧 -->
-<div class="justify-center">
-  <div class="col-12">
-    <div class="row">
-      <% if @posts.present? %>
-        <%= render @posts %>
-      <% else %>
-        <p><%= t('.no_result') %></p>
-      <% end %>
-      <%# ページネーション %>
-      <%= paginate @posts %>
-    </div>
-  </div>
-</div>
+<% if @posts.present? %>
+  <%= render @posts %>
+<% else %>
+  <p><%= t('.no_result') %></p>
+<% end %>
+<%# ページネーション %>
+<%= paginate @posts %>
