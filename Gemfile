@@ -59,6 +59,8 @@ gem 'faker', '~> 3.1'
 gem 'geocoder'
 gem "dotenv-rails"
 
+gem 'jquery-rails'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
