@@ -2,9 +2,11 @@
   <div class="bg-white rounded-lg p-4 m-5 w-2/3">
     <div class="mx-auto flex justify-around">
       <div class="px-1 mx-3">
-        <td style="width: 60px">
-          <%= image_tag post.user.avatar_url, class: 'rounded-circle', size: '70x70' %>
-        </td>
+        <label class="btn-circle avatar">
+          <div class="w-20 rounded-full">
+            <%= image_tag post.user.avatar_url, class: 'rounded-circle', size: '70x70' %>
+          </div>
+        </label>
       </div>
       <div class="text-1xl">
         <%= l post.date, format: :long %>

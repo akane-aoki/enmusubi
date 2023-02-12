@@ -11,7 +11,7 @@
     </div>
     <div class="">
       <%= f.label :image, class:"font-bold flex justify-center text-2xl" %>
-      <%= f.file_field :image, class: 'justify-center mb-3', accept: 'image/*', id: :post_img %>
+      <%= f.file_field :image, onchange: 'previewFileWithId(img_prev)', class: 'justify-center mb-3', accept: 'image/*' %>
       <%= f.hidden_field :image_cache %>
     </div>
     <div class='mt-3 mb-3 flex justify-center'>
@@ -19,24 +19,6 @@
         <%= image_tag post.image.url, id: 'img_prev', size: '100x100' %>
       <% end %>
     </div>
-
-    <script type="text/javascript">
-      $(function() {
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-        $('#img_prev').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $("#post_img").change(function(){
-            readURL(this);
-        });
-      });
-    </script>
-
     <%= f.submit t('defaults.create'), class: 'btn btn-accent' %>
   <% end %>
 </div>
