@@ -1,6 +1,6 @@
 <div class="flex justify-center">
   <div class="bg-white rounded-lg p-4 m-5 w-2/3">
-    <div class="mx-auto flex justify-around">
+    <div class="mx-auto flex justify-between">
       <div class="px-1 mx-3">
         <label class="btn-circle avatar">
           <div class="w-20 rounded-full">
@@ -9,7 +9,9 @@
         </label>
       </div>
       <div class="text-1xl">
-        <%= l post.date, format: :long %>
+        <%= link_to post_path(post), class: "btn btn-ghost text-2xl" do %>
+          <%= l post.date, format: :long %>
+        <% end %>
       </div>
       <div class="">
         <% if current_user.own?(post) %>
@@ -19,10 +21,8 @@
         <% end %>
       </div>
     </div>
-    <div class="text-center font-bold text-2xl">
-      <%= link_to post_path(post) do %>
+    <div class="text-center font-bold text-3xl">
         <%= post.body %>
-      <% end %>
     </div>
     <div class="flex justify-center">
       <% if post.image? %>  <!-- アップロード画像がある場合に実行する -->
