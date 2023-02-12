@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :guest_check
 
   def index
-    @posts = Post.includes(:user).order(created_at: :desc).page(params[:page])
     @my_effort = Effort.find_by(user: current_user)
 
     @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
@@ -14,6 +13,8 @@ class PostsController < ApplicationController
     end
 
     @partner_effort = Effort.find_by(user: @partner)
+
+    @posts = Post.where(user: [current_user, @partner]).order(date: :desc).page(params[:page])
   end
 
   def show
