@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_user, only: %i[edit update destroy]
+  before_action :guest_check
 
   def index
     @posts = Post.includes(:user).order(created_at: :desc).page(params[:page])

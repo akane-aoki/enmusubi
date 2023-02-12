@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
+  before_action :guest_check
 
   def show
     @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)

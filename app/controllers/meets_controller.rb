@@ -1,5 +1,6 @@
 class MeetsController < ApplicationController
   before_action :set_user, only: %i[edit update destroy]
+  before_action :guest_check
 
   def index
     @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day).first
