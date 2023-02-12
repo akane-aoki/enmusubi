@@ -14,6 +14,16 @@ ja:
         address: '郵便番号'
         avatar: 'アイコン'
         created_at: '登録日'
+      sessions:
+        new:
+          title: 'ログイン'
+          to_register_page: '登録ページへ'
+          password_forget: 'パスワードをお忘れの方はこちら'
+        create:
+          success: 'ログインしました'
+          fail: 'ログインに失敗しました'
+        destroy:
+          success: 'ログアウトしました'
       invitation:
         user_name: '招待者'
       post:
@@ -32,16 +42,16 @@ ja:
         body: 'がんばること'
     errors:
       models:
-        user:
-          attributes:
-            password:
-              blank: 'パスワードを入力してください'
-              invalid: 'パスワードに誤りがあります'
-              too_short: 'パスワードは6文字以上入力してください'
-            password_confirmation:
-              blank: 'パスワードを再入力してください'
-              confirmation: 'パスワードが違います'
-        reward:
-          attributes:
-            password:
+        # user:
+        #   attributes:
+        #     password:
+        #       blank: 'パスワードを入力してください'
+        #       invalid: 'パスワードに誤りがあります'
+        #       too_short: 'パスワードは6文字以上入力してください'
+        #     password_confirmation:
+        #       blank: 'パスワードを再入力してください'
+        #       confirmation: 'パスワードが違います'
+        # reward:
+        #   attributes:
+        #     password:
               
