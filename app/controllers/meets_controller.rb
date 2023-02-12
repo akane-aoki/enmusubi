@@ -26,7 +26,7 @@ class MeetsController < ApplicationController
       redirect_to meets_path, success: t('defaults.message.created', item: Meet.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_created', item: Meet.model_name.human)
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -35,7 +35,7 @@ class MeetsController < ApplicationController
       redirect_to meets_path, success: t('defaults.message.updated', item: Meet.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: Meet.model_name.human)
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

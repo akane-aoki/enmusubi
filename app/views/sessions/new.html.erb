@@ -14,7 +14,6 @@
           </div>
           <!-- Form -->
           <%= form_with url: login_path, local: true do |f| %>
-            <%# <%= render 'shared/error_messages', object: f.object %> %>
             <div class="mb-3">
               <%= f.label :email, User.human_attribute_name(:email) %>
               <%= f.email_field :email, class: 'form-control' %>

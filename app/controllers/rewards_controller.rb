@@ -12,7 +12,7 @@ class RewardsController < ApplicationController
       redirect_to rewards_path, success: t('defaults.message.created', item: Reward.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_created', item: Reward.model_name.human)
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +28,7 @@ class RewardsController < ApplicationController
       redirect_to rewards_path, success: t('defaults.message.updated', item: Reward.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: Reward.model_name.human)
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
