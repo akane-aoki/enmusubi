@@ -35,8 +35,9 @@ class DashboardsController < ApplicationController
       @meets_count = meets_arr.length
     end
 
-    @distance = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude],[partner.latitude,partner.longitude]).round
-
-    @total_distances = @distance * @meets_count
+    if partner
+      @distance = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude],[partner.latitude,partner.longitude]).round
+      @total_distances = @distance * @meets_count
+    end
   end
 end

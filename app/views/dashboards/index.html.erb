@@ -24,15 +24,15 @@
     <% if @my_effort %>
       <div class="text-2xl">会えない間にがんばること</div>
       <div class="font-bold text-4xl"><%= @my_effort.body %></div>
+      <%= link_to edit_effort_path(@my_effort) do %>
+        <button class="btn btn-accent m-2">がんばることを変更する</button>
+      <% end %><br>
     <% else %>
       <div class="font-bold text-2xl">会えない間にがんばることがまだ決まっていません</div>
       <%= link_to new_effort_path do %>
         <button class="btn btn-accent m-2">がんばることを決める</button>
       <% end %><br>
     <% end %>
-    <%= link_to edit_effort_path(@my_effort) do %>
-      <button class="btn btn-accent m-2">がんばることを変更する</button>
-    <% end %><br>
     <%= link_to new_post_path do %>
       <button class="btn btn-accent m-2">がんばりを伝える</button>
     <% end %>
@@ -66,9 +66,13 @@
   <%# 総移動距離 %>
   <div class="bg-white rounded-lg p-4 m-5">
     <div class="text-2xl">総移動距離</div>
+    <% if @total_distances %>
       <div class="font-bold text-4xl">約 <span class="text-syuiro"><%= @total_distances %></span> km</div>
-    <%= link_to distances_path do %>
-      <button class="btn btn-accent m-2">くわしく見る</button>
+      <%= link_to distances_path do %>
+        <button class="btn btn-accent m-2">くわしく見る</button>
+      <% end %>
+    <% else %>
+        <div class="font-bold text-4xl"><span class="text-syuiro">0</span> km</div>
     <% end %>
   </div>
 </div>

@@ -4,7 +4,7 @@
       <label tabindex="0" class="btn btn-ghost btn-circle">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
       </label>
-      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-60">
+      <ul tabindex="0" class="text-gray-700 menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-60">
         <li><%= link_to "今まで会った日一覧を見る", meets_path, class:"justify-between" %></li>
         <li><%= link_to "2人のがんばりを見る", posts_path, class:"justify-between" %></li>
         <li><%= link_to "がんばりを伝える", new_post_path, class:"justify-between" %></li>
@@ -26,7 +26,7 @@
           <% end %>
         </div>
       </label>
-      <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+      <ul tabindex="0" class="text-gray-700 mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li><%= link_to "プロフィール", profile_path, class:"justify-between" %></li>
         <li><a>恋人を登録する</a></li>
         <li><%= link_to "ログアウト", logout_path, class:"justify-between", data: { turbo_method: :delete, turbo_confirm: t('defaults.message.logout')} %></li>

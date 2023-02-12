@@ -14,10 +14,10 @@ class UsersController < ApplicationController
       @user.update(relationship_id: @relationship.id)
       Geocoder.search(:address, params: {contorycodes: "ja"})
       auto_login(@user)
-      redirect_to dashboards_path, success: 'ユーザー登録が完了しました'
+      redirect_to dashboards_path, success: t('.success')
     else
-      flash.now[:danger] = 'ユーザー登録に失敗しました'
-      render :new
+      flash.now[:danger] = t('.fail')
+      render :new, status: :unprocessable_entity
     end
   end
 

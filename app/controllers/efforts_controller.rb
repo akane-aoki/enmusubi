@@ -11,7 +11,7 @@ class EffortsController < ApplicationController
       redirect_to posts_path, success: t('defaults.message.created', item: Effort.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_created', item: Effort.model_name.human)
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -22,7 +22,7 @@ class EffortsController < ApplicationController
       redirect_to efforts_path, success: t('defaults.message.updated', item: Effort.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: Effort.model_name.human)
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
