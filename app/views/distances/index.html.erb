@@ -1,7 +1,7 @@
 <%= content_for(:title, t('.title')) %>
 <div class="text-center">
   <div class="p-4 m-5">
-    <div class="text-2xl">
+    <div class="text-4xl">
       <div class="font-bold"><%= t('.title') %></div>
     </div>
   </div>
@@ -10,24 +10,26 @@
 <div class="card-body">
   <div class='row'>
     <div class='col-md-9'>
-      <div class="text-center bg-white rounded-lg text-6xl p-4 m-5">
-        <div class="font-bold">約<%= @total_distances %>km</div>
+      <div class='flex justify-center'>
+        <div class="text-center bg-white rounded-lg text-6xl p-10 m-5 w-1/2">
+          <div class="font-bold">約<%= @total_distances %>km</div>
+        </div>
       </div>
       <div class="p-4 m-5">
         <% if @total_distances >= 20038 %>
-          <div class="text-center">これは、およそ</div>
-          <div class="text-center font-bold text-2xl">
+          <div class="text-center m-4 text-2xl">これは、およそ</div>
+          <div class="text-center font-bold text-4xl m-4">
             <% if @total_distances >= 40075 %>
               地球一周
             <% elsif @total_distances >= 20038 %>
               地球半周
             <% end %>
           </div>
-          <div class="text-center">の距離に到達しました。</div>
+          <div class="text-center m-4 text-2xl">の距離に到達しました。</div>
         <% end %>
         <% if @total_distances < 20038 %>
-          <div class="text-center">これは、およそ</div>
-          <div class="text-center font-bold text-2xl">東京から
+          <div class="text-center m-4 text-2xl">これは、およそ</div>
+          <div class="text-center font-bold text-4xl m-4">東京 から
             <% if @total_distances >= 18374 %>
               アルゼンチン ブエノスアイレス
             <% elsif @total_distances >= 17674 %>
@@ -90,7 +92,7 @@
               神奈川県 横浜市
             <% end %>
           </div>
-          <div class="text-center">までの直線距離に到達しました。</div>
+          <div class="text-center m-4 text-2xl">までの直線距離に到達しました。</div>
         <% end %>
       </div>
       <div class="p-4 m-5">
