@@ -2,11 +2,23 @@
   <div class='row'>
     <div class='col-sm-6 col-12'>
       <ul class="flex justify-center">
-        <li class='mx-10'><%= link_to "利用規約", dashboards_path %></li>
+        <li class='mx-10'>
+          <%= link_to dashboards_path do %>
+            利用<span class="inline-block">規約</span>
+          <% end %>
+        </li>
         <li>|</li>
-        <li class='mx-10'><%= link_to "プライバシーポリシー", dashboards_path %></li>
+        <li class='mx-10'>
+          <%= link_to dashboards_path do %>
+            プライバシー<span class="inline-block">ポリシー</span>
+          <% end %>
+        </li>
         <li>|</li>
-        <li class='mx-10'><%= link_to "お問い合わせ", dashboards_path %></li>
+        <li class='mx-10'>
+          <%= link_to dashboards_path do %>
+            お問い<span class="inline-block">合わせ</span>
+          <% end %>
+        </li>
       </ul>
       <div class='copyright flex justify-center'>
         <p>© 2023 遠結び</p>
