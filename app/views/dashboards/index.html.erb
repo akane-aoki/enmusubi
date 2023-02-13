@@ -22,16 +22,16 @@
 
   <%# effortモデル %>
   <div class="bg-white rounded-lg p-4 m-5 md:w-1/2">
+    <div class="text-2xl my-5">会えない間にがんばること</div>
     <% if @my_effort %>
-      <div class="text-2xl my-5">会えない間にがんばること</div>
       <div class="font-bold text-4xl"><%= @my_effort.body %></div>
       <%= link_to edit_effort_path(@my_effort) do %>
         <button class="btn btn-accent mt-5 mx-5">がんばることを変更する</button>
       <% end %><br>
     <% else %>
-      <div class="font-bold text-2xl">会えない間にがんばることがまだ決まっていません</div>
+      <div class="font-bold text-2xl">会えない間にがんばることが<span class="inline-block">まだ決まっていません</span></div>
       <%= link_to new_effort_path do %>
-        <button class="btn btn-accent mt-3 mx-5">がんばることを決める</button>
+        <button class="btn btn-accent mt-5 mx-5">がんばることを決める</button>
       <% end %><br>
     <% end %>
     <%= link_to new_post_path do %>
