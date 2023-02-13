@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def guest_check
-    if current_user == User.find_by(name: "ゲストユーザー")
+    if current_user.name == "ゲストユーザー"
       redirect_to dashboards_path, notice: "このページを見るにはユーザー登録が必要です"
     end
   end

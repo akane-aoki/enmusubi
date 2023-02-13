@@ -1,5 +1,6 @@
 class RewardsController < ApplicationController
   before_action :set_user, only: %i[show edit update]
+  before_action :guest_check
 
   def new
     @reward = Reward.new

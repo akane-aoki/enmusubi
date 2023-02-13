@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_user, only: %i[edit update destroy]
-  before_action :guest_check
 
   def index
     @my_effort = Effort.find_by(user: current_user)

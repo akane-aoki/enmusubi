@@ -1,5 +1,5 @@
 class DistancesController < ApplicationController
-  before_action :guest_check
+  before_action :guest_check, only: %i[show]
 
   def index
     partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
