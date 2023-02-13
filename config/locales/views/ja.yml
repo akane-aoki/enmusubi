@@ -79,9 +79,9 @@ ja:
     show:
       title: '会えなかった分のごほうび'
     new:
-      title: '会えなかった分のごほうびを決める'
+      title: 'ごほうびを決める'
     edit:
-      title: '会えなかった分のごほうびを編集する'
+      title: 'ごほうびを編集する'
 
   efforts:
     new:
