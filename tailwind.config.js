@@ -7,7 +7,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'tsuku': ['TsukuARdGothic-Regular','sans-serif']
+      'tsuku': ['TsukuARdGothic-Regular','sans-serif'],
+      'yuji': ['Yuji Syuku', 'serif'],
+      'kurenaido': ['Zen Kurenaido', 'sans-serif']
     },
     extend: {
       colors: {

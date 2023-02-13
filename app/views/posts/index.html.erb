@@ -9,18 +9,20 @@
 <%# 「がんばりを伝える」ボタン %>
 <div class="flex justify-center p-1 m-2">
   <div class="text-2xl font-bold">
-    <%= link_to t('posts.new.title'), new_post_path, class: 'btn btn-accent' %>
+    <%= link_to t('posts.new.title'), new_post_path, class: 'btn btn-accent text-xl' %>
   </div>
 </div>
 <%# # がんばること %>
-<div class="p-4 m-5">
-  <% if @my_effort %>
-    <%= render 'effort',{ my_effort: @my_effort} %>
-  <% end %>
-  <br>
-  <% if @partner %>
-    <%= render 'partner_effort',{ partner: @partner, partner_effort: @partner_effort } %>
-  <% end %>
+<div class="lg:flex justify-center p-1 m-1">
+  <div class="rounded-lg lg:w-2/3 lg:flex">
+    <% if @my_effort %>
+      <%= render 'effort',{ my_effort: @my_effort} %>
+    <% end %>
+    <br>
+    <% if @partner %>
+      <%= render 'partner_effort',{ partner: @partner, partner_effort: @partner_effort } %>
+    <% end %>
+  </div>
 </div>
 
   <!-- がんばり記録一覧 -->

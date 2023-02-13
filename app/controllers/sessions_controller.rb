@@ -20,13 +20,13 @@ class SessionsController < ApplicationController
 
   def guest_login
     @guest_user = User.create(
-    name: 'ゲスト',
-    email: SecureRandom.alphanumeric(15) + "@email.com",
-    password: 'password',
-    password_confirmation: 'password'
-    # address: ''
-    # relationship_id: SecureRandom.random_number(1 << 64) 
-    )
+                  name: 'ゲストユーザー',
+                  email: SecureRandom.alphanumeric(15) + "@email.com",
+                  password: 'password',
+                  password_confirmation: 'password'
+                  # address: ''
+                  # relationship_id: SecureRandom.random_number(1 << 64) 
+                  )
     auto_login(@guest_user)
     redirect_to dashboards_path, success: 'ゲストとしてログインしました'
   end

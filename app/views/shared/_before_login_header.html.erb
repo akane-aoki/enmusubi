@@ -5,10 +5,10 @@
     <%= link_to "遠結び", root_path, class:"btn btn-ghost normal-case text-4xl" %>
   </div>
   <div class="navbar-end">
-    <ul class="text-gray-700 flex justify-end">
-      <li class="nav-item mx-10"><%= link_to t('defaults.login'), login_path ,class: 'nav-link' %></li>
-      <li class="nav-item mx-10"><%= link_to t('defaults.signup'), signup_path ,class: 'nav-link' %></li>
-      <li class="nav-item mx-10"><%= link_to t('defaults.guest_login'), guest_login_path ,class: 'nav-link' %></li>
+    <ul class="lg:flex justify-end text-xs md:text-base">
+      <li class="nav-item ml-14"><%= link_to t('defaults.login'), login_path ,class: 'btn btn-ghost nav-link' %></li>
+      <li class="nav-item ml-8"><%= link_to t('defaults.signup'), signup_path ,class: 'btn btn-ghost nav-link' %></li>
+      <li class="nav-item ml-8"><%= link_to t('defaults.guest_login'), guest_login_path ,class: 'btn btn-ghost nav-link' %></li>
     </ul>
   </div>
 </div>

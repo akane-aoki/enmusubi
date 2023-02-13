@@ -1,10 +1,10 @@
 <!-- コメントフォーム -->
-<div class="row mb-3 flex justify-center">
-  <div class="col-lg-8 offset-lg-2">
+<div class="flex justify-center text-center">
+  <div class="m-5">
     <%= form_with model: comment, url: [post, comment], id: "new_comment", local: false do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :body %>
-      <%= f.text_area :body ,class: "form-control mb-3", id: 'js-new-comment-body', rows: 4 %>
+      <%= f.label :body, class: "m-3" %>
+      <%= f.text_area :body ,class: "form-control mb-3", id: 'js-new-comment-body', size: "50x5" %>
       <%= f.submit t('defaults.post'), class: "btn btn-accent" %>
     <% end %>
   </div>

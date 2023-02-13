@@ -1,17 +1,19 @@
-<div class="flex justify-center">
-  <div class="bg-white rounded-lg p-4 m-5 w-2/3">
-    <div class="mx-auto flex justify-around">
-      <div class="px-1 mx-3">
+<div class="lg:flex justify-center p-2 m-1">
+  <div class="rounded-lg lg:w-2/3 ounded-xl bg-white">
+    <div class="mx-auto flex justify-between">
+      <div class="px-1 m-3">
         <label class="btn-circle avatar">
           <div class="w-20 rounded-full">
             <%= image_tag post.user.avatar_url, class: 'rounded-circle', size: '70x70' %>
           </div>
         </label>
       </div>
-      <div class="text-1xl">
-        <%= l post.date, format: :long %>
+      <div class="text-1xl self-center">
+        <%= link_to post_path(post), class: "btn btn-ghost text-xl md:text-2xl" do %>
+          <%= l post.date, format: :long %>
+        <% end %>
       </div>
-      <div class="">
+      <div class="justify-self-end self-center">
         <% if current_user.own?(post) %>
           <%= render 'crud_menus', post: post %>
         <% else %>
@@ -19,14 +21,12 @@
         <% end %>
       </div>
     </div>
-    <div class="text-center font-bold text-2xl">
-      <%= link_to post_path(post) do %>
+    <div class="text-center font-bold text-2xl md:text-3xl p-3">
         <%= post.body %>
-      <% end %>
     </div>
     <div class="flex justify-center">
       <% if post.image? %>  <!-- アップロード画像がある場合に実行する -->
-        <%= image_tag post.image.url, class: 'card-img-top', size: '300x200' %><!-- boardインスタンスの画像ファイルのURLを取得し表示 -->
+        <%= image_tag post.image.url, class: 'card-img-top', size: '200x300' %><!-- boardインスタンスの画像ファイルのURLを取得し表示 -->
       <% end %>
     </div>
   </div>
