@@ -3,7 +3,7 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div class="m-7 text-2xl">
       <%= f.label :body %><br>
-      <%= f.text_field :body, class: 'p-6', size: "30x5" %>
+      <%= f.text_area :body, size: "30x2" %>
     </div>
     <%= f.submit t('defaults.create'), class: 'btn btn-accent text-xl' %>
   <% end %>
