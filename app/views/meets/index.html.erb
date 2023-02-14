@@ -14,8 +14,8 @@
     </div>
     <div class="text-center bg-white rounded-lg text-3xl md:text-5xl p-4 mb-3">
       <div class="font-bold">
-        <% if @meet_first && @meet_first >= @today %>
-          <%= l @meet_first, format: :long %>
+        <% if @meet_first.meet_day && @meet_first.meet_day >= @today %>
+          <%= l @meet_first.meet_day, format: :long %>
         <% else %>
           まだ決まっていません
         <% end %>
@@ -27,20 +27,16 @@
   </div>
 </div>
 <div class='row md:flex justify-center'>
-  <div class='md:w-2/3 text-center bg-white rounded-lg text-center'>
-    <div class="p-2 m-3 text-2xl">
+  <div class='md:w-2/3 bg-white rounded-lg text-center'>
+    <div class="pt-2 mt-3 text-2xl text-center">
       <div class="text-center font-bold">今まで会った日</div>
     </div>
-    <div class="p-4 m-5">
-      <div class="text-center">
-        <% if @meets %>
-          <% @meets.each do |meets| %>
-            <ul class="text-2xl"><%= l meets %></ul>
-          <% end %>
-        <% else %>
-          今まで会った日はまだありません
-        <% end %>
-      </div>
+    <div class="p-2 m-2">
+      <% if @meets.present? %>
+        <%= render @meets,{ meets: @meets } %>
+      <% else %>
+        今まで会った日はまだありません
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,0 +1,9 @@
+<div class="flex justify-center items-stretch">
+  <div class="lg:w-1/3"></div>
+  <div class="font-bold text-xl md:text-3xl lg:w-1/3 self-center">
+    <%= l meet.meet_day, format: :long  %>
+  </div>
+  <div class="w-1/3">
+    <%= render 'crud_menus', meet: meet %>
+  </div>
+</div>

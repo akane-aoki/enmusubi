@@ -3,10 +3,10 @@ class MeetsController < ApplicationController
   before_action :guest_check
 
   def index
-    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day).first
+    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).first
     @today = Date.current
 
-    meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day)
+    meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc)
     if meets_arr
       @meets = meets_arr.last(meets_arr.length - 1)
     end

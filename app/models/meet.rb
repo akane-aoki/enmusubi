@@ -1,11 +1,11 @@
 class Meet < ApplicationRecord
   belongs_to :relationship
 
-  validates :meet_day, presence: true
+  validates :meet_day_start, presence: true
 
   enum status: { attended_to_meet: 0, met_not: 1, met: 2 }
 
   def next_meet
-    current_user.relation.meet_day
+    current_user.relation.meet_day_start
   end
 end
