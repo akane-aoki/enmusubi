@@ -6,33 +6,50 @@
     </div>
   </div>
 </div>
-<!-- 会う日一覧 -->
+<%# 次会う日 %>
 <div class='row md:flex justify-center'>
-  <div class='md:w-2/3 text-center'>
+  <div class='md:w-2/3 xl:w-1/3 text-center'>
     <div class="p-2 m-2 text-2xl md:text-3xl">
       <div class="text-center font-bold">次会う日は</div>
     </div>
-    <div class="text-center bg-white rounded-lg text-3xl md:text-5xl p-4">
+    <div class="text-center bg-white rounded-lg text-2xl md:text-3xl pt-4">
       <div class="font-bold">
         <% if @meet_first.meet_day_start && @meet_first.meet_day_start >= @today %>
-          <%= l @meet_first.meet_day_start, format: :long %>
+          <%= l @meet_first.meet_day_start %>
+          <% if @meet_first.meet_day_end %>
+             〜 <%= l @meet_first.meet_day_end %>
+          <% end %>
         <% else %>
           まだ決まっていません
         <% end %>
       </div>
-    </div>
-    <div class="flex justify-center">
-      <%= link_to edit_meet_path(@meet_first), class: "" do %>
-        <%= icon('far', 'pen-to-square fa-1x') %>
+      <% if @meet_first.meet_day_start && @meet_first.meet_day_start >= @today %>
+        <%= link_to edit_meet_path(@meet_first), class: "btn btn-ghost" do %>
+          <%= icon('far', 'pen-to-square fa-1x') %>
+        <% end %>
+        <%= link_to meet_path(@meet_first), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')} do %>
+          <%= icon('fa', 'trash fa-1x') %>
+        <% end %>
       <% end %>
+    </div>
+    <%# 登録ボタン %>
+    <div class="">
+      <% unless @meet_first.meet_day_start && @meet_first.meet_day_start >= @today %>
+        <%= link_to new_meet_path do %>
+          <button class="btn btn-accent my-3">次会う日を決める</button>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="">
       <%= link_to new_meet_path do %>
-        <button class="btn btn-accent my-3">次会う日を決める</button>
+        <button class="btn btn-accent my-3">今まで会った日を登録する</button>
       <% end %>
     </div>
   </div>
 </div>
+<%# 今まで会った日一覧 %>
 <div class='row md:flex justify-center'>
-  <div class='md:w-2/3 bg-white rounded-lg text-center'>
+  <div class='md:w-2/3 xl:w-1/3 bg-white rounded-lg text-center'>
     <div class="pt-2 mt-3 text-2xl text-center">
       <div class="text-center font-bold">今まで会った日</div>
     </div>
