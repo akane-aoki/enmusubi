@@ -34,7 +34,8 @@ ja:
       comment:
         body: 'コメント'
       meet:
-        meet_day: '会う日'
+        meet_day_start: '会う日（はじまり）'
+        meet_day_end: '会う日（おわり）'
       reward:
         not_meet_day: '会えない日数'
         content: '会えなかった分のごほうび'

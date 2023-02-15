@@ -1,0 +1,11 @@
+<div class="flex justify-center items-stretch">
+  <div class="text-xl md:text-2xl w-2/3 self-center">
+    <%= l meets.meet_day_start %>
+    <% if meets.meet_day_end %>
+       〜 <%= l meets.meet_day_end %>
+    <% end %>
+  </div>
+  <div class="w-1/3 self-center">
+    <%= render 'crud_menus', meet: meets %>
+  </div>
+</div>

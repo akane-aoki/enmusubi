@@ -1,7 +1,7 @@
 <%= content_for(:title, t('.title')) %>
 <div class="text-center md:flex">
   <%# meetモデル %>
-  <div class="bg-white rounded-lg p-4 m-5 md:w-1/2">
+  <div class="bg-white rounded-lg p-4 m-2 md:w-1/2">
     <div class="text-2xl my-5">次会える日</div>
     <% if @day_count %>
       <div class="text-2xl">次会える日まで</div>
@@ -13,7 +13,7 @@
         <button class="btn btn-accent m-5">今まで会った日を見る</button>
       <% end %>
     <% else %>
-      <div class="font-bold text-2xl">次会う日がまだ決まっていません</div>
+      <div class="font-bold text-2xl">次会う日がまだ<span class="inline-block">決まっていません</span></div>
       <%= link_to new_meet_path do %>
         <button class="btn btn-accent m-5">次会う日を決める</button>
       <% end %>
@@ -21,7 +21,7 @@
   </div>
 
   <%# effortモデル %>
-  <div class="bg-white rounded-lg p-4 m-5 md:w-1/2">
+  <div class="bg-white rounded-lg p-4 m-2 md:w-1/2">
     <div class="text-2xl my-5">会えない間にがんばること</div>
     <% if @my_effort %>
       <div class="font-bold text-4xl"><%= @my_effort.body %></div>
@@ -44,7 +44,7 @@
 </div>
 <div class="text-center md:flex">
   <%# rewardモデル %>
-  <div class="bg-white rounded-lg p-3 m-5 md:w-1/2">
+  <div class="bg-white rounded-lg p-3 m-2 md:w-1/2">
     <div class="text-2xl my-5">会えなかった分のごほうび</div>
     <% if @reward %>
       <div class="text-1xl md:text-2xl">会えない日が<span class="font-bold text-3xl"><%= @not_meet_day.not_meet_day %>日</span>になったら
@@ -53,14 +53,18 @@
         <div class="font-bold text-3xl">「<%= @reward.content %>」</div>
         <div class="text-1xl md:text-2xl">のごほうびがもらえます</div>
       </div>
-      <span class="font-bold text-2xl md:text-3xl">前回会った日から<span class="text-syuiro"><%= @reward_count %></span>日<span class="inline-block">経ちました！</span></span>
+      <% if @reward_count %>
+        <span class="font-bold text-2xl md:text-3xl">前回会った日から<span class="text-syuiro"><%= @reward_count %></span>日<span class="inline-block">経ちました！</span></span>
+      <% else %>
+        <span class="">★前回会った日を登録すると、</span><span class="inline-block">日数が表示されます</span>
+      <% end %>
       <div>
         <%= link_to edit_reward_path(@reward) do %>
           <button class="btn btn-accent m-5">ごほうびを編集する</button>
         <% end %>
       </div>
     <% else %>
-      <div class="font-bold text-2xl">ごほうびはまだ決まっていません</div>
+      <div class="font-bold text-2xl">ごほうびはまだ<span class="inline-block">決まっていません</span></div>
       <%= link_to new_reward_path do %>
         <button class="btn btn-accent m-5">ごほうびを決める</button>
       <% end %>
@@ -68,7 +72,7 @@
   </div>
 
   <%# 総移動距離 %>
-  <div class="bg-white rounded-lg p-4 m-5 md:w-1/2">
+  <div class="bg-white rounded-lg p-4 m-2 md:w-1/2">
     <div class="text-2xl my-5">総移動距離</div>
     <% if @total_distances %>
       <div class="font-bold text-4xl">約 <span class="text-syuiro"><%= @total_distances %></span> km</div>

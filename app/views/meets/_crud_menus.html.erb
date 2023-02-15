@@ -1,0 +1,12 @@
+<ul class="flex w-28">
+  <li class="ml-5">
+    <%= link_to edit_meet_path(meet), class: "btn btn-ghost" do %>
+      <%= icon('far', 'pen-to-square fa-1x') %>
+    <% end %>
+  </li>
+  <li class="mr-5">
+    <%= link_to meet_path(meet), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')} do %>
+      <%= icon('fa', 'trash fa-1x') %>
+    <% end %>
+  </li>
+</ul>

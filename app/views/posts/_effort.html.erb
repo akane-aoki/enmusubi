@@ -1,6 +1,10 @@
 <div class="flex justify-center bg-white border-double border-4 border-miru lg:w-1/2 mx-3">
   <div class="m-3 text-center">
     <div class="text-2xl"><%= current_user.name %>ががんばること</div>
-    <div class="text-4xl font-bold"><%= my_effort.body %></div>
+    <% if my_effort %>
+      <div class="text-2xl font-bold"><%= my_effort.body %></div>
+    <% else %>
+      <div class="text-xl font-bold"><%= current_user.name %>のがんばることは<span class="inline-block">まだ決まっていません</span></div>
+    <% end %>
   </div>
 </div>

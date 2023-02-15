@@ -33,7 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 7) do
   end
 
   create_table "meets", force: :cascade do |t|
-    t.date "meet_day", null: false
+    t.date "meet_day_start", null: false
+    t.date "meet_day_end"
     t.integer "status"
     t.bigint "relationship_id", null: false
     t.datetime "created_at", null: false

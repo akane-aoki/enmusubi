@@ -2,8 +2,8 @@ class DashboardsController < ApplicationController
   def index
     # meetsモデル
     today = Date.current
-    meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1)
-    @meet = meet_arr.pluck(:meet_day).first
+    meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1)
+    @meet = meet_arr.pluck(:meet_day_start).first
 
     if @meet
       @day_count = (@meet - today).to_i
@@ -14,9 +14,13 @@ class DashboardsController < ApplicationController
 
     # rewardsモデル
     @reward = Reward.find_by(relationship_id: current_user.relationship_id)
-    @meets_second = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day).second
+    if @meet_second
+      @meets_second = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_end: :desc).pluck(:meet_day_end).second
+    else
+      @meets_second = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start).second
+    end
 
-    if @reward
+    if @reward && @meets_second
       @reward_count = (today - @meets_second).to_i
     end
 
@@ -25,8 +29,8 @@ class DashboardsController < ApplicationController
     # distances
     partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
 
-    meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).pluck(:meet_day)
-    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day: :desc).limit(1).pluck(:meet_day).first
+    meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start)
+    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).pluck(:meet_day_start).first
     @today = Date.current
 
     if @meet_first && @meet_first >= @today
@@ -35,7 +39,7 @@ class DashboardsController < ApplicationController
       @meets_count = meets_arr.length
     end
 
-    if current_user.address && partner
+    if current_user.address && partner && @meets_count
       @distance = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude],[partner.latitude,partner.longitude]).round
       @total_distances = @distance * @meets_count
     end
