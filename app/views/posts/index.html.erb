@@ -15,9 +15,7 @@
 <%# # がんばること %>
 <div class="lg:flex justify-center p-1 m-1">
   <div class="rounded-lg lg:w-2/3 lg:flex">
-    <% if @my_effort %>
-      <%= render 'effort',{ my_effort: @my_effort} %>
-    <% end %>
+    <%= render 'effort',{ my_effort: @my_effort} %>
     <br>
     <% if @partner %>
       <%= render 'partner_effort',{ partner: @partner, partner_effort: @partner_effort } %>
