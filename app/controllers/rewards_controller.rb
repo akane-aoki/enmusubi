@@ -19,7 +19,7 @@ class RewardsController < ApplicationController
 
   def show
     @reward = Reward.find_by(relationship_id: current_user.relationship_id)
-    @not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
+    @not_meet_day_start = Reward.find_by(relationship_id: current_user.relationship_id)
   end
 
   def edit; end
@@ -40,6 +40,6 @@ class RewardsController < ApplicationController
   end
 
   def reward_params
-    params.require(:reward).permit(:not_meet_day, :content)
+    params.require(:reward).permit(:not_meet_day_start, :content)
   end
 end

@@ -8,21 +8,26 @@
 </div>
 <!-- 会う日一覧 -->
 <div class='row md:flex justify-center'>
-  <div class='md:w-2/3 lg:w-1/3 text-center'>
+  <div class='md:w-2/3 text-center'>
     <div class="p-2 m-2 text-2xl md:text-3xl">
       <div class="text-center font-bold">次会う日は</div>
     </div>
-    <div class="text-center bg-white rounded-lg text-3xl md:text-5xl p-4 mb-3">
+    <div class="text-center bg-white rounded-lg text-3xl md:text-5xl p-4">
       <div class="font-bold">
-        <% if @meet_first.meet_day && @meet_first.meet_day >= @today %>
-          <%= l @meet_first.meet_day, format: :long %>
+        <% if @meet_first.meet_day_start && @meet_first.meet_day_start >= @today %>
+          <%= l @meet_first.meet_day_start, format: :long %>
         <% else %>
           まだ決まっていません
         <% end %>
       </div>
     </div>
     <div class="flex justify-center">
-      <%# <%= link_to t('defaults.edit'), edit_meet_path(meet_attr.id), class: "" %>
+      <%= link_to edit_meet_path(@meet_first), class: "" do %>
+        <%= icon('far', 'pen-to-square fa-1x') %>
+      <% end %>
+      <%= link_to new_meet_path do %>
+        <button class="btn btn-accent my-3">次会う日を決める</button>
+      <% end %>
     </div>
   </div>
 </div>
@@ -33,9 +38,9 @@
     </div>
     <div class="p-2 m-2">
       <% if @meets.present? %>
-        <%= render @meets,{ meets: @meets } %>
+        <%= render partial: 'meet', collection: @meets, as: 'meets' %>
       <% else %>
-        今まで会った日はまだありません
+        <p class="text-xl">今まで会った日はまだありません</p>
       <% end %>
     </div>
   </div>

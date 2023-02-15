@@ -29,13 +29,13 @@ puts "start"
 
 # 2.times do |n|
 #   meet = Meet.create!(
-#     meet_day: Faker::Date.between(from: 30.days.ago, to: Date.today),
+#     meet_day_start: Faker::Date.between(from: 30.days.ago, to: Date.today),
 #     relationship_id: 1
 #   )
 # end
 
 # Meet.create!(
-#   meet_day: "2023-03-22",
+#   meet_day_start: "2023-03-22",
 #   relationship_id: 1
 # )
 
@@ -82,14 +82,14 @@ puts "start"
 # # meet
 # 4.times do |n|
 #   meet = Meet.create!(
-#       meet_day: Faker::Date.between(from: 30.days.ago, to: Date.today),
+#       meet_day_start: Faker::Date.between(from: 30.days.ago, to: Date.today),
 #       relationship_id: 2
 #   )
-#   puts "#{meet.meet_day}を作成しました"
+#   puts "#{meet.meet_day_start}を作成しました"
 # end
 
 # Meet.create!(
-#   meet_day: "2023-03-22",
+#   meet_day_start: "2023-03-22",
 #   relationship_id: 2
 # )
 
