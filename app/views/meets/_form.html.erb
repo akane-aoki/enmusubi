@@ -1,10 +1,10 @@
 <div class="flex justify-center">
   <%= form_with model: meet, local: true do |f| %>
-    <%# <%= render 'shared/error_messages', object: f.object %> %>
+    <%= render 'shared/error_messages', object: f.object %>
     <div class="flex mb-5">
-      <%= f.date_field :meet_day_start, class: 'form-control px-16 py-5' %>
+      <%= f.date_field :meet_day_start, class: 'form-control md:px-16 py-5' %>
       <div class="mx-5 self-center">〜</div>
-      <%= f.date_field :meet_day_end, class: 'form-control px-16 py-5' %>
+      <%= f.date_field :meet_day_end, class: 'form-control md:px-16 py-5' %>
     </div>
     <%= f.submit t('defaults.create'), class: 'btn btn-accent' %>
   <% end %>

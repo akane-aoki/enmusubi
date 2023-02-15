@@ -14,7 +14,11 @@ class DashboardsController < ApplicationController
 
     # rewardsモデル
     @reward = Reward.find_by(relationship_id: current_user.relationship_id)
-    @meets_second = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start).second
+    if @meet_second
+      @meets_second = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_end: :desc).pluck(:meet_day_end).second
+    else
+      @meets_second = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start).second
+    end
 
     if @reward && @meets_second
       @reward_count = (today - @meets_second).to_i
