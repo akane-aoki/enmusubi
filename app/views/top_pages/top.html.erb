@@ -1,8 +1,54 @@
-<div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <h1>遠結び</h1>
-    <ul>
-      <li><%= link_to 'ゲストログイン', guest_login_path %></li>
+<nav id="btm-nav" class="float">
+  <div class="nav page-top">
+    <ul class="menu px-1 flex justify-center ">
+      <li class="py-1">
+        <button class="btn btn-accent"><%= link_to (t 'sessions.new.to_register_page'), new_user_path %></button>
+      </li>
+      <li class="py-1">
+        <button class="btn btn-accent"><%= link_to (t 'users.new.to_login_page'), login_path %></button>
+      </li>
     </ul>
+  </div>
+</nav>
+<div class='top-wrapper'>
+  <div class='text-center'>
+    <div class="text-8xl m-5">遠結び</div>
+    <div class="text-xl">
+      <%= link_to guest_login_path do %>
+        登録せずにちょっと見てみる<p>（ゲストログイン）</p>
+      <% end %>
+    </div>
+  </div>
+  <div class='text-center'>
+    <div class="text-8xl m-5">遠結び</div>
+    <div class="text-xl">
+      <%= link_to guest_login_path do %>
+        登録せずにちょっと見てみる<p>（ゲストログイン）</p>
+      <% end %>
+    </div>
+  </div>
+  <div class='text-center'>
+    <div class="text-8xl m-5">遠結び</div>
+    <div class="text-xl">
+      <%= link_to guest_login_path do %>
+        登録せずにちょっと見てみる<p>（ゲストログイン）</p>
+      <% end %>
+    </div>
+  </div>
+  <div class='text-center'>
+    <div class="text-8xl m-5">遠結び</div>
+    <div class="text-xl">
+      <%= link_to guest_login_path do %>
+        登録せずにちょっと見てみる<p>（ゲストログイン）</p>
+      <% end %>
+    </div>
+  </div>
+  <div class='text-center'>
+    <div class="text-8xl m-5">遠結び</div>
+    <div class="text-xl">
+      <%= link_to guest_login_path do %>
+        登録せずにちょっと見てみる<p>（ゲストログイン）</p>
+      <% end %>
+    </div>
   </div>
 </div>

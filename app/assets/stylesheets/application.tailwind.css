@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.is-hidden {
+  @apply invisible opacity-0;
+}
+
+.page-top {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  transition: 0.5s;
+}
