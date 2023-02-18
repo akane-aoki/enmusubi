@@ -5,6 +5,7 @@ ja:
       post: 'がんばり投稿'
       reward: 'ごほうび'
       effort: 'がんばること'
+      meet: '会う日'
     attributes:
       user:
         name: 'ニックネーム'
@@ -55,4 +56,3 @@ ja:
         # reward:
         #   attributes:
         #     password:
-              

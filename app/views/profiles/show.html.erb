@@ -7,34 +7,37 @@
     </div>
   </div>
 </div>
- <div class="p-4 m-5 flex justify-center">
-    <div class="text-1xl">
-      <table class="table">
-        <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:name)) %></th>
-          <td><%= current_user.name %></td>
-        </tr>
-        <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:email)) %></th>
-          <td><%= current_user.email %></td>
-        </tr>
-        <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:address)) %></th>
-          <td><%= current_user.address %></td>
-        </tr>
-        <tr>
-          <th scope="row">恋人の<%= t(User.human_attribute_name(:name)) %></th>
-          <% if @partner %>
-            <td><%= @partner.name %></td>
-          <% else %>
-            <td>恋人がまだ登録されていません</td>
-          <% end %>
-        </tr>
-        <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:avatar)) %></th>
-          <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '100x100' %></td>
-        </tr>
-      </table>
+<div class="flex justify-center text-center">
+  <div class="text-base md:text-xl">
+    <div class="mb-3">
+      <div class="font-bold", scope="row"><%= t(User.human_attribute_name(:name)) %></div>
+      <div class="bg-white"><%= current_user.name %></div>
+    </div>
+    <div class="mb-3">
+      <div class="font-bold", scope="row"><%= t(User.human_attribute_name(:email)) %></div>
+      <div class="bg-white"><%= current_user.email %></div>
+    </div>
+    <div class="mb-3">
+      <div class="font-bold", scope="row"><%= t(User.human_attribute_name(:address)) %></div>
+      <div class="bg-white">
+        <% if current_user.address %>
+          <%= current_user.address %>
+        <% else %>
+          <div class="bg-white p-3"></div>
+        <% end %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="font-bold", scope="row">恋人の<%= t(User.human_attribute_name(:name)) %></div>
+      <% if @partner %>
+        <div class="bg-white"><%= @partner.name %></div>
+      <% else %>
+        <div>恋人がまだ登録されていません</div>
+      <% end %>
+    </div>
+    <div>
+      <div class="font-bold", scope="row"><%= t(User.human_attribute_name(:avatar)) %></div>
+      <div class="flex justify-center"><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '100x100' %></div>
     </div>
   </div>
 </div>
