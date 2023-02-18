@@ -40,6 +40,6 @@ class RewardsController < ApplicationController
   end
 
   def reward_params
-    params.require(:reward).permit(:not_meet_day_start, :content)
+    params.require(:reward).permit(:not_meet_day, :content)
   end
 end
