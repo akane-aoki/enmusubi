@@ -6,9 +6,11 @@ class MeetsController < ApplicationController
     @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).first
     @today = Date.current
 
-    meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc)
-    if meets_arr
-      @meets = meets_arr.last(meets_arr.length - 1)
+    @meets_all = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc)
+    if @meets_all && @meet_first && @meet_first.meet_day_start && @meet_first.meet_day_start < @today
+      @meets = @meets_all
+    elsif @meets_all && @meets_all.length >= 1
+      @meets = @meets_all.last(@meets_all.length - 1)
     end
   end
 
