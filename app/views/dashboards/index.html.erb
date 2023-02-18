@@ -2,7 +2,7 @@
 <div class="text-center md:flex">
   <%# meetモデル %>
   <div class="bg-white rounded-lg p-4 m-2 md:w-1/2">
-    <div class="text-2xl my-5">次会える日</div>
+    <div class="text-2xl my-5 border-b-2 border-syuiro">次会える日</div>
     <% if @day_count %>
       <div class="text-2xl">次会える日まで</div>
       <div class="font-bold text-4xl">あと
@@ -22,7 +22,7 @@
 
   <%# effortモデル %>
   <div class="bg-white rounded-lg p-4 m-2 md:w-1/2">
-    <div class="text-2xl my-5">会えない間にがんばること</div>
+    <div class="text-2xl my-5 border-b-2 border-syuiro">会えない間にがんばること</div>
     <% if @my_effort %>
       <div class="font-bold text-4xl"><%= @my_effort.body %></div>
       <%= link_to edit_effort_path(@my_effort) do %>
@@ -45,7 +45,7 @@
 <div class="text-center md:flex">
   <%# rewardモデル %>
   <div class="bg-white rounded-lg p-3 m-2 md:w-1/2">
-    <div class="text-2xl my-5">会えなかった分のごほうび</div>
+    <div class="text-2xl my-5 border-b-2 border-syuiro">会えなかった分のごほうび</div>
     <% if @reward %>
       <div class="text-1xl md:text-2xl">会えない日が<span class="font-bold text-3xl"><%= @not_meet_day.not_meet_day %>日</span>になったら
       </div>
@@ -72,8 +72,8 @@
   </div>
 
   <%# 総移動距離 %>
-  <div class="bg-white rounded-lg p-4 m-2 md:w-1/2">
-    <div class="text-2xl my-5">総移動距離</div>
+  <div class="bg-white rounded-lg p-3 m-2 md:w-1/2">
+    <div class="text-2xl my-5 border-b-2 border-syuiro">総移動距離</div>
     <% if @total_distances %>
       <div class="font-bold text-4xl">約 <span class="text-syuiro"><%= @total_distances %></span> km</div>
       <%= link_to distances_path do %>

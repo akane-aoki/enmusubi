@@ -1,8 +1,57 @@
-<div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <h1>遠結び</h1>
-    <ul>
-      <li><%= link_to 'ゲストログイン', guest_login_path %></li>
+<nav id="btm-nav" class="float">
+  <div class="nav page-top">
+    <ul class="menu px-1 flex justify-center ">
+      <li class="py-1">
+        <button class="btn btn-accent"><%= link_to (t 'sessions.new.to_register_page'), signup_path %></button>
+      </li>
+      <li class="py-1">
+        <button class="btn btn-accent"><%= link_to (t 'users.new.to_login_page'), login_path %></button>
+      </li>
     </ul>
+  </div>
+</nav>
+<div class='top-wrapper'>
+  <div class='my-14 md:my-20 text-center'>
+    <div class="font-bold text-xl md:text-4xl"><span class="text-syuiro text-5xl md:text-8xl">遠距離恋愛</span><span class="">中の</span><p class="mt-5 md:mt-12"><span class="text-syuiro text-2xl md:text-5xl">「寂しい」</span>を<span class="text-syuiro text-2xl md:text-5xl ">「楽しい」</span>に。</p></div>
+  </div>
+  <div class='text-center'>
+    <div class="my-7">
+      <button class="btn btn-accent md:text-xl"><%= link_to "さっそく使ってみる", signup_path %></button>
+    </div>
+    <div class="mt-3">
+      <div class="">登録せずにちょっと使ってみる</div>
+      <p class="mb-5"><%= link_to "ゲストログイン", guest_login_path, class:"btn btn-accent md:text-xl" %></p>
+    </div>
+  </div>
+</div>
+<div class='mt-16 mx-2 md:mx-20 border-y-2 border-syuiro bg-white'>
+  <div class='text-center text-2xl md:text-4xl font-bold text-syuiro my-1'>遠結びとは
+  </div>
+  <div class='text-sm md:text-xl md:text-center mx-7 mb-3'>
+    遠距離恋愛中の恋人と一緒に使うことで、<span class="inline-block">会えない時間を楽しく、有意義にする</span><span class="inline-block">サービスです。</span>
+  </div>
+</div>
+<div class='mt-8 md:mt-12 mx-2 md:mx-14'>
+  <div class='text-center text-xl md:text-3xl font-bold text-syuiro my-1 md:my-5'>遠結びでできること
+  </div>
+  <div class='mb-20'>
+    <div class="flex items-stretch md:px-16 lg:px-32">
+      <div class="w-1/2 lg:w-1/3"><%= image_tag "top_meet2.png", size:"400x200" %></div>
+      <div class='text-left text-sm md:text-xl w-1/2 self-center'>
+        次会える日までの<span class="inline-block">カウントダウン</span>
+        <p class="mt-3">会えない間にがんばることを相手に宣言</p>
+      </div>
+    </div>
+    <div class="flex items-stretch md:px-8 lg:px-10 md:flex justify-end">
+      <div class='text-left pl-10 md:text-right text-sm md:text-xl w-1/2 self-center'>お互いのがんばりを<span class="inline-block">投稿し合う</span></div>
+      <div class="w-1/2 lg:w-1/3"><%= image_tag "top_post.png", size:"400x200" %></div>
+    </div>
+    <div class="flex items-stretch md:px-16 lg:px-32">
+      <div class="w-1/2 lg:w-1/3"><%= image_tag "top_distance.png", size:"400x200" %></div>
+      <div class='text-left text-sm md:text-xl w-1/2 self-center'>２人の総移動距離を知る</div>
+    </div>
+    <div class='font-bold text-center text-lg md:text-2xl mt-10 mb-5'>そのほかにも・・・
+    </div>
+    <div class=' text-center text-sm md:text-xl'>会えなかった分のごほうびを決めたり、<p>会った日の一覧を見たりすることもできます</p></div>
   </div>
 </div>
