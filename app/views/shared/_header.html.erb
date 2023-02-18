@@ -8,7 +8,11 @@
         <li><%= link_to "今まで会った日一覧を見る", meets_path, class:"justify-between" %></li>
         <li><%= link_to "2人のがんばりを見る", posts_path, class:"justify-between" %></li>
         <li><%= link_to "がんばりを伝える", new_post_path, class:"justify-between" %></li>
-        <li><%= link_to "総移動距離を見る", distances_path, class:"justify-between" %></li>
+        <li>
+          <% if @distance %>
+            <%= link_to "総移動距離を見る", distances_path, class:"justify-between" %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
