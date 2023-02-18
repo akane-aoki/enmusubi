@@ -1,14 +1,14 @@
 <%= content_for(:title, t('.title')) %>
 <div class="text-center">
   <div class="p-4 m-5">
-    <div class="text-4xl md:flex justify-center">
+    <div class="text-3xl md:text-4xl md:flex justify-center">
       <div class="font-bold border-b-2 border-syuiro md:w-2/3 xl:w-1/3"><%= t('.title') %></div>
     </div>
   </div>
 </div>
 <!-- 総移動距離詳細 -->
 <div class='flex justify-center'>
-  <div class="text-center bg-white rounded-lg text-7xl p-5 m-2 md:w-1/2">
+  <div class="text-center bg-white rounded-lg text-6xl md:text-7xl p-5 m-2 md:w-1/2">
     <div class="font-bold">約 <%= @total_distances %> km</div>
   </div>
 </div>
@@ -26,7 +26,7 @@
   <% end %>
   <% if @total_distances < 20038 %>
     <div class="text-center m-4 text-2xl">これは、およそ</div>
-    <div class="text-center font-bold text-4xl m-4">東京 から
+    <div class="text-center font-bold text-3xl md:text-4xl m-4">東京 から
       <span class="inline-block">
         <% if @total_distances >= 18374 %>
           アルゼンチン ブエノスアイレス
