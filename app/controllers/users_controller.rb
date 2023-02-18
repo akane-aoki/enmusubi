@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @relationship = Relationship.new
     @user = User.new(user_params)
+    @user.invitation_digest = SecureRandom.alphanumeric(8)
 
     if @user.save && @relationship.save
       @user.update(relationship_id: @relationship.id)
