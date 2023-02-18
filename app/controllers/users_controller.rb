@@ -27,4 +27,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :avatar_cache, :address)
   end
+
+  def invite
+    unless (@user && !@user.activated? &&
+        @user.authenticated?(:invite, params[:id])) #params[:id]はメールアドレスに仕込まれたトークン
+      flash[:danger] = "無効なリンクです。"
+      redirect_to root_url
+    end
+  end
 end

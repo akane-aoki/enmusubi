@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   get 'guest_login', to: 'sessions#guest_login'
+  get 'invite', to: 'users#invite'
 end

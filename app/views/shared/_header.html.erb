@@ -32,7 +32,7 @@
       </label>
       <ul tabindex="0" class="text-gray-700 mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li><%= link_to "プロフィール", profile_path, class:"justify-between" %></li>
-        <li><a>恋人を登録する</a></li>
+        <li><%= link_to "恋人を登録する", invite_path, class:"justify-between" %></li>
         <li><%= link_to "ログアウト", logout_path, class:"justify-between", data: { turbo_method: :delete, turbo_confirm: t('defaults.message.logout')} %></li>
       </ul>
     </div>
