@@ -5,11 +5,11 @@ class PostsController < ApplicationController
     @my_effort = Effort.find_by(user: current_user)
 
     @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
-    if @partner.nil?
-      return
-    elsif @partner
-      @partner.name
-    end
+    # if @partner.nil?
+    #   return
+    # elsif @partner
+    #   @partner.name
+    # end
 
     @partner_effort = Effort.find_by(user: @partner)
 

@@ -24,10 +24,10 @@
 </div>
 
   <!-- がんばり記録一覧 -->
-<% if @posts.present? %>
-  <%= render @posts %>
-  <%# ページネーション %>
-  <%= paginate @posts %>
+<% if @posts %>
+  <%= render partial: 'post', collection: @posts, as: 'post' %>
 <% else %>
   <p><%= t('.no_result') %></p>
 <% end %>
+<%# ページネーション %>
+<%# <%= paginate @posts %>
