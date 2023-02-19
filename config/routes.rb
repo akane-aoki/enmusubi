@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   get 'guest_login', to: 'sessions#guest_login'
+  get 'privacy_policy', to: 'homes#privacy_policy'
+  get 'terms', to: 'homes#terms'
 end
