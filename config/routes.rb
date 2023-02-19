@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :efforts, only: %i[new create edit update]
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
+  resource :invite, only: %i[show edit update]
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

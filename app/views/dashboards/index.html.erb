@@ -1,4 +1,11 @@
 <%= content_for(:title, t('.title')) %>
+<% unless @partner %>
+  <div class="flex justify-center">
+    <%= link_to invite_path do %>
+      <button class="btn btn-primary m-2 text-xl">恋人を登録する</button>
+    <% end %>
+  </div>
+<% end %>
 <div class="text-center md:flex">
   <%# meetモデル %>
   <div class="bg-white rounded-lg p-4 m-2 md:w-1/2">

@@ -24,6 +24,8 @@ ja:
       logout: "ログアウトしますか？"
       sent_reset_password: "パスワードリセット手順を送信しました"
       updated_password: "パスワードを変更しました"
+      invited: "招待されました"
+      not_invited: "招待できませんでした"
 
   time:
     formats:
@@ -42,6 +44,12 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+
+  invites:
+    show:
+      title: '恋人を登録する'
+    edit:
+      title: 'パートナーから招待してもらう'
 
   sessions:
     new:

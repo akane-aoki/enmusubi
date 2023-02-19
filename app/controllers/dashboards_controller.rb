@@ -27,7 +27,7 @@ class DashboardsController < ApplicationController
     @not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
 
     # distances
-    partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
+    @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
 
     meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start)
     @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).pluck(:meet_day_start).first
@@ -39,8 +39,8 @@ class DashboardsController < ApplicationController
       @meets_count = meets_arr.length
     end
 
-    if current_user.address && partner && @meets_count
-      @distance = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude],[partner.latitude,partner.longitude]).round
+    if current_user.address && @partner && @meets_count
+      @distance = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude],[@partner.latitude,@partner.longitude]).round
       @total_distances = @distance * @meets_count
     end
   end

@@ -9,7 +9,8 @@ module.exports = {
     fontFamily: {
       'tsuku': ['TsukuARdGothic-Regular','sans-serif'],
       'yuji': ['Yuji Syuku', 'serif'],
-      'kurenaido': ['Zen Kurenaido', 'sans-serif']
+      'kurenaido': ['Zen Kurenaido', 'sans-serif'],
+      'mono': ['PT Mono']
     },
     extend: {
       colors: {
@@ -32,6 +33,8 @@ module.exports = {
           ...require("daisyui/src/colors/themes")["[data-theme=cupcake]"],
           accent: '#DDB87E',
           "accent-content": '#373C38', // btn-primaryなどの文字の色
+          primary: '#5B622E',
+          "primary-content": '#FFFFFF', // btn-primaryなどの文字の色
           // btn-ghost: "blue",
           // "btn-ghost-content": "syuiro",
           // "neutral": "#EEAF3A",

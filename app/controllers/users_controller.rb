@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @relationship = Relationship.new
     @user = User.new(user_params)
+    @user.invitation_digest = SecureRandom.alphanumeric(8)
 
     if @user.save && @relationship.save
       @user.update(relationship_id: @relationship.id)
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :avatar_cache, :address)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :avatar_cache, :address, :invitation_digest)
   end
+
 end

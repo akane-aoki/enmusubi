@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 7) do
+ActiveRecord::Schema[7.0].define(version: 8) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -78,7 +78,9 @@ ActiveRecord::Schema[7.0].define(version: 7) do
     t.bigint "relationship_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "invitation_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["invitation_digest"], name: "index_users_on_invitation_digest", unique: true
     t.index ["relationship_id"], name: "index_users_on_relationship_id"
   end
 
