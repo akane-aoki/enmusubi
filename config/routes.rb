@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'invite/index'
   root 'top_pages#top'
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   resources :efforts, only: %i[new create edit update]
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
+  resource :invite, only: %i[show edit update]
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -20,5 +20,4 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   get 'guest_login', to: 'sessions#guest_login'
-  get 'invite', to: 'users#invite'
 end
