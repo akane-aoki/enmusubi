@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'invite/index'
   root 'top_pages#top'
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
