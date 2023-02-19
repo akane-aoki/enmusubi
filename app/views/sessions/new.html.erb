@@ -5,7 +5,7 @@
       <h1 class="font-bold text-3xl my-5"><%= t('.title') %></h1>
       <div class="my-4">アカウントをお持ちでない場合はこちら
         <%= link_to t('defaults.register'), signup_path, class: 'underline btn btn-ghost text-xl' %>
-      </span>
+      </div>
     </div>
     <%= form_with url: login_path, local: true do |f| %>
       <div class="mb-3">

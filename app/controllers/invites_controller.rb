@@ -5,21 +5,22 @@ class InvitesController < ApplicationController
   def show; end
 
   def edit
+    @user.invitation_digest = ""
   end
 
   def update
-    byebug
     if params.present?
       @partner = User.find_by(invitation_digest: params[:user][:invitation_digest])
-      @user.update(relationship: @partner.relationship)
+      if @user.update(relationship_id: @partner.relationship_id)
+        redirect_to invite_path, success: t('defaults.message.invited')
+      else
+        flash.now['danger'] = t('defaults.message.not_invited')
+        render :edit, status: :unprocessable_entity
+      end
+    else
+      flash.now['danger'] = t('defaults.message.not_invited')
+      render :edit, status: :unprocessable_entity
     end
-
-    # if @user.update(user_params)
-    #   redirect_to invite_path, success: t('defaults.message.updated', item: User.model_name.human)
-    # else
-    #   flash.now['danger'] = t('defaults.message.not_updated', item: User.model_name.human)
-    #   render :edit, status: :unprocessable_entity
-    # end
   end
 
   private
@@ -29,6 +30,6 @@ class InvitesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:invitation_digest)
+    params.require(:user).permit(:invitation_digest, :relationship_id)
   end
 end

@@ -24,6 +24,8 @@ ja:
       logout: "ログアウトしますか？"
       sent_reset_password: "パスワードリセット手順を送信しました"
       updated_password: "パスワードを変更しました"
+      invited: "招待されました"
+      not_invited: "招待できませんでした"
 
   time:
     formats:
