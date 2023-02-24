@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    # byebug
     if @user.update(user_params)
       redirect_to profile_path, success: t('defaults.message.updated', item: User.model_name.human)
     else
