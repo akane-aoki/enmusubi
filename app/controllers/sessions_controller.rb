@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login
+  skip_before_action :require_login, only: %i[new create destroy guest_login]
 
   def new; end
 
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def guest_login
-    @guest_user = User.create(
+    @guest_user = User.create!(
                   name: 'ゲストユーザー',
                   email: SecureRandom.alphanumeric(15) + "@email.com",
                   password: 'password',
