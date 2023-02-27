@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   root 'top_pages#top'
+
+  get 'guest_login', to: 'sessions#guest_login'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  get 'signup', to: 'users#new'
+  post 'signup', to: 'users#create'
+  get 'privacy_policy', to: 'homes#privacy_policy'
+  get 'terms', to: 'homes#terms'
+
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
   resources :posts do
@@ -13,13 +23,4 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
   resource :invite, only: %i[show edit update]
-
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
-  get 'signup', to: 'users#new'
-  post 'signup', to: 'users#create'
-  get 'guest_login', to: 'sessions#guest_login'
-  get 'privacy_policy', to: 'homes#privacy_policy'
-  get 'terms', to: 'homes#terms'
 end
