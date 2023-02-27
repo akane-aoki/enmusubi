@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: %i[new create destroy guest_login]
+  skip_before_action :require_login
 
   def new; end
 
