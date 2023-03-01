@@ -1,4 +1,4 @@
-<%= content_for(:title, t('.title')) %>
+<% set_meta_tags title: t('.title'), og: { title: t('.title') } %>
 <% unless @partner %>
   <div class="flex justify-center">
     <%= link_to invite_path do %>
