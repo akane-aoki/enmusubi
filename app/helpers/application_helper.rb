@@ -5,13 +5,26 @@ module ApplicationHelper
     page_title.empty? ? base_title : page_title + " | " + base_title
   end
 
-  def default_meta_tags
-    base_title = '遠結び'
+  def show_meta_tags
+    if display_meta_tags.blank?
+      assign_meta_tags
+    end
+    display_meta_tags
+  end
 
-    def default_meta_tags
-    {
+  def assign_meta_tags(options = {})
+    defaults = t('meta_tags.defaults')
+    options.reverse_merge!(defaults)
+
+    site = options[:site]
+    title = options[:title]
+    description = options[:description]
+    keywords = options[:keywords]
+    # image = options[:image].presence || image_url('image.png')
+
+    configs = {
       site: '遠結び',
-      title: page_title.empty? ? base_title : page_title + " | " + base_title,
+      title: 'page_title',
       reverse: true,
       separator: '|',   #Webサイト名とページタイトルを区切るために使用されるテキスト
       description: '遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、 会えない時間を充実させ、楽しみに変えてくれるサービスです。恋人と一緒に使って、会えない時間も楽しもう！',
@@ -20,11 +33,11 @@ module ApplicationHelper
       noindex: ! Rails.env.production?,
       icon: [                    #favicon、apple用アイコンを指定する
         { href: image_url('favicon.ico') },
-        { href: image_url('icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        # { href: image_url('icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
       ],
       og: {
         site_name: '遠結び',
-        title: page_title.empty? ? base_title : page_title + " | " + base_title,
+        title: 'page_title',
         description: '遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、 会えない時間を充実させ、楽しみに変えてくれるサービスです。恋人と一緒に使って、会えない時間も楽しもう！', 
         type: 'website',
         url: "https://enkyori-enmusubi.com",
@@ -36,7 +49,6 @@ module ApplicationHelper
         site: '@ツイッターのアカウント名',
       }
     }
-    end
   end
 
 #   def page_description
