@@ -5,50 +5,83 @@ module ApplicationHelper
     page_title.empty? ? base_title : page_title + " | " + base_title
   end
 
-  def page_description
-    description = "遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、 会えない時間を充実させ、楽しみに変えてくれるサービスです。恋人と一緒に使って、会えない時間も楽しもう！"
+  def default_meta_tags
+    base_title = '遠結び'
 
-    # if @work
-    #   description = "#{変数}と組み合わせたり"
-    # end
-
-    # description = @page_description.nil? ? description : @page_description
-    description
+    def default_meta_tags
+    {
+      site: '遠結び',
+      title: page_title.empty? ? base_title : page_title + " | " + base_title,
+      reverse: true,
+      separator: '|',   #Webサイト名とページタイトルを区切るために使用されるテキスト
+      description: '遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、 会えない時間を充実させ、楽しみに変えてくれるサービスです。恋人と一緒に使って、会えない時間も楽しもう！',
+      keywords: '遠結び,縁結び,遠距離,遠距離恋愛,恋人,カップル,寂しい,さみしい,会えない',   #キーワードを「,」区切りで設定する
+      canonical: "https://enkyori-enmusubi.com",   #優先するurlを指定する
+      noindex: ! Rails.env.production?,
+      icon: [                    #favicon、apple用アイコンを指定する
+        { href: image_url('favicon.ico') },
+        { href: image_url('icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+      ],
+      og: {
+        site_name: '遠結び',
+        title: page_title.empty? ? base_title : page_title + " | " + base_title,
+        description: '遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、 会えない時間を充実させ、楽しみに変えてくれるサービスです。恋人と一緒に使って、会えない時間も楽しもう！', 
+        type: 'website',
+        url: "https://enkyori-enmusubi.com",
+        image: image_url('ogp.png'),
+        locale: 'ja_JP',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: '@ツイッターのアカウント名',
+      }
+    }
+    end
   end
 
-  def page_image
-    image = asset_url('基本のサムネイル')
+#   def page_description
+#     description = "遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、 会えない時間を充実させ、楽しみに変えてくれるサービスです。恋人と一緒に使って、会えない時間も楽しもう！"
 
-    # # ページごとにサムネイルがあったら上書き
-    # if @works
-    #   @works.each do |work|
-    #     unless work&.thumbnail_url.blank? || work.nil?
-    #       image = work&.thumbnail_url
-    #       break
-    #     end
-    #   end
-    # end
+#     # if @work
+#     #   description = "#{変数}と組み合わせたり"
+#     # end
 
-    image
-  end
+#     # description = @page_description.nil? ? description : @page_description
+#     description
+#   end
 
-  def get_twitter_card_info(page)
-    twitter_card = {}
+#   def page_image
+#     image = asset_url('基本のサムネイル')
 
-# 　　# ページごとにTwitterシェア時のサムネイルを変える
-#     if page
-#       twitter_card[:url] = page.url
-#       twitter_card[:title] = page.title
-#       twitter_card[:description] = page.description
-#     else
-#       twitter_card[:url] = '基本のURL'
-#       twitter_card[:title] = '基本のタイトル'
-#       twitter_card[:description] = '基本の説明'
-#     end
-    twitter_card[:image] = asset_url('基本のサムネイル画像')
-    twitter_card[:card] = 'summary_large_image'
-    twitter_card[:site] = '@rubys8arks'
-    twitter_card
-  end
+#     # # ページごとにサムネイルがあったら上書き
+#     # if @works
+#     #   @works.each do |work|
+#     #     unless work&.thumbnail_url.blank? || work.nil?
+#     #       image = work&.thumbnail_url
+#     #       break
+#     #     end
+#     #   end
+#     # end
 
+#     image
+#   end
+
+#   def get_twitter_card_info(page)
+#     twitter_card = {}
+
+# # 　　# ページごとにTwitterシェア時のサムネイルを変える
+# #     if page
+# #       twitter_card[:url] = page.url
+# #       twitter_card[:title] = page.title
+# #       twitter_card[:description] = page.description
+# #     else
+# #       twitter_card[:url] = '基本のURL'
+# #       twitter_card[:title] = '基本のタイトル'
+# #       twitter_card[:description] = '基本の説明'
+# #     end
+#     twitter_card[:image] = asset_url('基本のサムネイル画像')
+#     twitter_card[:card] = 'summary_large_image'
+#     twitter_card[:site] = '@rubys8arks'
+#     twitter_card
+#   end
 end
