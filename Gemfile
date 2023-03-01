@@ -68,6 +68,9 @@ gem 'jquery-rails'
 # gem "image_processing", "~> 1.2"
 gem "pg", "~> 1.1"
 
+gem 'sitemap_generator'
+gem "meta-tags"
+
 group :production do
   # Use postgresql as the database for Active Record
 end
