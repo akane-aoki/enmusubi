@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html data-theme="cupcake">
   <head>
-    <title><%= page_title(yield(:title)) %></title>
+    <%# <title><%= page_title(yield(:title)) %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= show_meta_tags %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= display_meta_tags(default_meta_tags) %>
     <script src="https://kit.fontawesome.com/5dd17b11f4.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application" %>
   </head>
