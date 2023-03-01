@@ -23,22 +23,22 @@ module ApplicationHelper
     # image = options[:image].presence || image_url('image.png')
 
     configs = {
-      site: '遠結び',
-      title: 'page_title',
-      reverse: true,
       separator: '|',   #Webサイト名とページタイトルを区切るために使用されるテキスト
-      description: '遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、 会えない時間を充実させ、楽しみに変えてくれるサービスです。恋人と一緒に使って、会えない時間も楽しもう！',
-      keywords: '遠結び,縁結び,遠距離,遠距離恋愛,恋人,カップル,寂しい,さみしい,会えない',   #キーワードを「,」区切りで設定する
+      reverse: true,
+      site: site,
+      title: page_title.empty? ? title : page_title,
+      description: description,
+      keywords: keywords,   #キーワードを「,」区切りで設定する
       canonical: "https://enkyori-enmusubi.com",   #優先するurlを指定する
-      noindex: ! Rails.env.production?,
+      # noindex: ! Rails.env.production?,
       icon: [                    #favicon、apple用アイコンを指定する
         { href: image_url('favicon.ico') },
         # { href: image_url('icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
       ],
       og: {
-        site_name: '遠結び',
-        title: 'page_title',
-        description: '遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、 会えない時間を充実させ、楽しみに変えてくれるサービスです。恋人と一緒に使って、会えない時間も楽しもう！', 
+        site_name: site,
+        title: page_title.empty? ? title : page_title,
+        description: description,
         type: 'website',
         url: "https://enkyori-enmusubi.com",
         image: image_url('ogp.png'),
@@ -49,6 +49,7 @@ module ApplicationHelper
         site: '@ツイッターのアカウント名',
       }
     }
+    set_meta_tags(configs)
   end
 
 #   def page_description
