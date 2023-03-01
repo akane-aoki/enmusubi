@@ -1,10 +1,4 @@
 module ApplicationHelper
-  # def page_title(page_title = '')
-  #   base_title = '遠結び'
-
-  #   page_title.empty? ? base_title : page_title + " | " + base_title
-  # end
-
   def default_meta_tags
     {
       separator: '|',   #Webサイト名とページタイトルを区切るために使用されるテキスト
@@ -34,44 +28,4 @@ module ApplicationHelper
       }
     }
   end
-
-  # def assign_meta_tags(options = {})
-  #   defaults = t('meta_tags.defaults')
-  #   options.reverse_merge!(defaults)
-
-  #   site = options[:site]
-  #   title = options[:title]
-  #   description = options[:description]
-  #   keywords = options[:keywords]
-  #   # image = options[:image].presence || image_url('image.png')
-
-  #   configs = {
-  #     separator: '|',   #Webサイト名とページタイトルを区切るために使用されるテキスト
-  #     reverse: true,
-  #     site: site,
-  #     title: page_title.empty? ? title : page_title,
-  #     description: description,
-  #     keywords: keywords,   #キーワードを「,」区切りで設定する
-  #     canonical: request.original_url,  #優先するurlを指定する
-  #     # noindex: ! Rails.env.production?,
-  #     icon: [                    #favicon、apple用アイコンを指定する
-  #       { href: image_url('favicon.ico') },
-  #       # { href: image_url('icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
-  #     ],
-  #     og: {
-  #       site_name: site,
-  #       title: page_title.empty? ? title : page_title,
-  #       description: description,
-  #       type: 'website',
-  #       url: request.original_url,
-  #       image: image_url('ogp.png'),
-  #       locale: 'ja_JP',
-  #     },
-  #     twitter: {
-  #       card: 'summary_large_image',
-  #       site: '@ツイッターのアカウント名',
-  #     }
-  #   }
-  #   set_meta_tags(configs)
-  # end
 end
