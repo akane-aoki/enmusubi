@@ -38,6 +38,7 @@ vendor/bundle
 /node_modules
 
 /public/uploads
+/public/sitemap.xml
 /public/sitemap.xml.gz
 
 db/enmusubi_development.sqlite3
