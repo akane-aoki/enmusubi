@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 8) do
+ActiveRecord::Schema[7.0].define(version: 9) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 8) do
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
-    t.integer "address"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.string "avatar"
