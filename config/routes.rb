@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'signup', to: 'users#create'
   get 'privacy_policy', to: 'homes#privacy_policy'
   get 'terms', to: 'homes#terms'
+  get 'sitemap', to: redirect("https://s3-ap-northeast-1.amazonaws.com/#{Rails.application.credentials[:aws][:bucket_name]}/sitemaps/sitemap.xml.gz")
 
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]

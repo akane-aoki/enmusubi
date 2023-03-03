@@ -29,6 +29,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/credentials.yml.enc
 /config/database.yml
 
 vendor/bundle
@@ -38,6 +39,7 @@ vendor/bundle
 /node_modules
 
 /public/uploads
+/public/sitemap.xml
 /public/sitemap.xml.gz
 
 db/enmusubi_development.sqlite3
