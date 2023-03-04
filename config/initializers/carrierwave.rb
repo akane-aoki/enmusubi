@@ -20,7 +20,7 @@ CarrierWave.configure do |config|
 
   # S3のバケットを指定
   config.fog_directory  = ENV['S3_BUCKET_NAME']
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET_NAME']}'
+  config.asset_host = "https://s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET_NAME']}"
 end
 
 # 日本語ファイル名の設定
