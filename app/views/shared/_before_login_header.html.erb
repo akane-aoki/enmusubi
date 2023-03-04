@@ -2,7 +2,9 @@
   <div class="navbar-start">
   </div>
   <div class="navbar-center">
-    <%= link_to "遠結び", root_path, class:"btn btn-ghost normal-case text-4xl" %>
+    <%= link_to root_path, class:"btn btn-ghost normal-case text-4xl" do %>
+      <%= image_tag 'logo.png', size: '150x50' %>
+    <% end %>
   </div>
   <div class="navbar-end">
     <%# <ul class="lg:flex justify-end"> %>
