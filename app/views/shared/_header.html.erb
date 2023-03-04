@@ -17,7 +17,9 @@
     </div>
   </div>
   <div class="navbar-center">
-    <%= link_to "遠結び", dashboards_path, class:"btn btn-ghost normal-case text-4xl" %>
+    <%= link_to dashboards_path, class:"btn btn-ghost normal-case text-4xl" do %>
+      <%= image_tag 'logo.png', size: '150x50' %>
+    <% end %>
   </div>
   <div class="navbar-end">
     <div class="dropdown dropdown-end">
