@@ -352,6 +352,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.24.1)
       parser (>= 3.1.1.0)
+    rubocop-performance (1.16.0)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     rubocop-rails (2.17.4)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
@@ -468,6 +471,7 @@ DEPENDENCIES
   rails-i18n
   rspec-rails (~> 6.0, >= 6.0.1)
   rubocop (~> 1.43)
+  rubocop-performance
   rubocop-rails (~> 2.17, >= 2.17.4)
   sitemap_generator
   solargraph (~> 0.48.0)

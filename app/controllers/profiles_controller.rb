@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :guest_check
 
   def show
-    @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
+    @partner = User.partner(current_user)
     if @partner.nil?
       return
     elsif @partner

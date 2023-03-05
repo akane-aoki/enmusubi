@@ -33,4 +33,8 @@ class User < ApplicationRecord
     end
   end
 
+  def self.partner(user)
+    User.where.not(id: user.id).find_by(relationship_id: user.relationship_id)
+  end
+
 end
