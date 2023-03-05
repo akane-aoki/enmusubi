@@ -5,7 +5,7 @@ class DistancesController < ApplicationController
     partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
 
     meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start)
-    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).pluck(:meet_day_start).first
+    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).pick(:meet_day_start)
     @today = Date.current
 
     if @meet_first && @meet_first >= @today

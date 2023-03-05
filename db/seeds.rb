@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "start"
+Rails.logger.debug "start"
 
 # # 花子
 # relationship = Relationship.create!
@@ -65,7 +65,7 @@ puts "start"
       password_confirmation: 'password',
       relationship_id: 2
   )
-  puts "#{user.name}を作成しました"
+  Rails.logger.debug "#{user.name}を作成しました"
 end
 
 # post
@@ -76,16 +76,16 @@ end
   post = Post.create!(body: body,
                       date: date,
                       user: user)
-  puts "#{post.body}を作成しました"
+  Rails.logger.debug "#{post.body}を作成しました"
 end
 
 # meet
 4.times do |n|
   meet = Meet.create!(
-      meet_day_start: Faker::Date.between(from: 30.days.ago, to: Date.today),
+      meet_day_start: Faker::Date.between(from: 30.days.ago, to: Time.zone.today),
       relationship_id: 2
   )
-  puts "#{meet.meet_day_start}を作成しました"
+  Rails.logger.debug "#{meet.meet_day_start}を作成しました"
 end
 
 Meet.create!(
@@ -106,7 +106,7 @@ Effort.create!(
   user_id: 2
 )
 
-puts "userは#{User.count}件"
-puts "postは#{Post.count}件"
-puts "effortは#{Effort.count}件"
-puts "end"
+Rails.logger.debug "userは#{User.count}件"
+Rails.logger.debug "postは#{Post.count}件"
+Rails.logger.debug "effortは#{Effort.count}件"
+Rails.logger.debug "end"

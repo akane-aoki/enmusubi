@@ -3,7 +3,7 @@ class DashboardsController < ApplicationController
     # meetsモデル
     today = Date.current
     meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1)
-    @meet = meet_arr.pluck(:meet_day_start).first
+    @meet = meet_arr.pick(:meet_day_start)
 
     if @meet
       @day_count = (@meet - today).to_i
@@ -30,7 +30,7 @@ class DashboardsController < ApplicationController
     @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
 
     meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start)
-    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).pluck(:meet_day_start).first
+    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).pick(:meet_day_start)
     @today = Date.current
 
     if @meet_first && @meet_first >= @today
