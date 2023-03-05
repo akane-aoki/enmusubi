@@ -3,10 +3,10 @@ class MeetsController < ApplicationController
   before_action :guest_check
 
   def index
-    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).first
+    @meet_first = Meet.meets_all(current_user).limit(1).first
     @today = Date.current
 
-    @meets_all = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc)
+    @meets_all = Meet.meets_all(current_user)
     if @meets_all && @meet_first && @meet_first.meet_day_start && @meet_first.meet_day_start < @today
       @meets = @meets_all
     elsif @meets_all && @meets_all.length >= 1

@@ -8,4 +8,8 @@ class Meet < ApplicationRecord
   def next_meet
     current_user.relation.meet_day_start
   end
+
+  def self.meets_all(user)
+    Meet.where(relationship_id: user.relationship_id).order(meet_day_start: :desc)
+  end
 end

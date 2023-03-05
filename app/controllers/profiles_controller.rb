@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :guest_check
 
   def show
-    @partner = User.partner(user = current_user)
+    @partner = User.partner(current_user)
     if @partner.nil?
       return
     elsif @partner
