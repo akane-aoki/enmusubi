@@ -91,6 +91,7 @@ group :development, :test do
   gem 'bullet', '~> 7.0', '>= 7.0.7'
   gem 'rubocop', '~> 1.43'
   gem 'rubocop-rails', '~> 2.17', '>= 2.17.4'
+  gem 'rubocop-performance', require: false
 
   # Table/Schema
   gem 'annotate', '~> 3.2'
