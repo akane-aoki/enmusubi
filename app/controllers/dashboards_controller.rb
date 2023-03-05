@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
     meet_arr = Meet.meets_all(current_user).limit(1)
     @meet = meet_arr.pick(:meet_day_start)
 
-    if @meet
+    if @meet && @meet >= today
       @day_count = (@meet - today).to_i
     end
 
