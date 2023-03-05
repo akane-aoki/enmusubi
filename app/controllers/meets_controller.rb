@@ -7,9 +7,10 @@ class MeetsController < ApplicationController
     @today = Date.current
 
     @meets_all = Meet.meets_all(current_user)
-    if @meets_all && @meet_first && @meet_first.meet_day_start && @meet_first.meet_day_start < @today
+
+    if Meet.meets_include_meet_first(current_user)
       @meets = @meets_all
-    elsif @meets_all && @meets_all.length >= 1
+    elsif Meet.meets_except_meet_first(current_user)
       @meets = @meets_all.last(@meets_all.length - 1)
     end
   end

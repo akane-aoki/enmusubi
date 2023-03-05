@@ -2,7 +2,7 @@ class DashboardsController < ApplicationController
   def index
     # meetsモデル
     today = Date.current
-    meet_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1)
+    meet_arr = Meet.meets_all(current_user).limit(1)
     @meet = meet_arr.pick(:meet_day_start)
 
     if @meet
