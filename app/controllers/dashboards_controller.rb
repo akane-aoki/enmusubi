@@ -14,10 +14,10 @@ class DashboardsController < ApplicationController
 
     # rewardsモデル
     @reward = Reward.find_by(relationship_id: current_user.relationship_id)
-    if @meet_second
-      @meets_second = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_end: :desc).pluck(:meet_day_end).second
+    if Meet.meet_second_include_meet_day_end(current_user)
+      @meets_second = Meet.meet_second_include_meet_day_end(current_user)
     else
-      @meets_second = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start).second
+      @meets_second = Meet.meet_second_only_meet_day_start(current_user)
     end
 
     if @reward && @meets_second
@@ -27,10 +27,10 @@ class DashboardsController < ApplicationController
     @not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
 
     # distances
-    @partner = User.where.not(id: current_user.id).find_by(relationship_id: current_user.relationship_id)
+    @partner = User.partner(current_user)
 
-    meets_arr = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).pluck(:meet_day_start)
-    @meet_first = Meet.where(relationship_id: current_user.relationship_id).order(meet_day_start: :desc).limit(1).pick(:meet_day_start)
+    meets_arr = Meet.meets_arr(current_user)
+    @meet_first = Meet.meets_all(current_user).limit(1).first.meet_day_start
     @today = Date.current
 
     if @meet_first && @meet_first >= @today
