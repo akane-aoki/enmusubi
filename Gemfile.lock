@@ -101,6 +101,9 @@ GEM
     aws-sdk-dynamodb (1.81.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sigv4 (~> 1.1)
+    aws-sdk-kms (1.63.0)
+      aws-sdk-core (~> 3, >= 3.165.0)
+      aws-sigv4 (~> 1.1)
     aws-sdk-rails (3.7.1)
       aws-record (~> 2)
       aws-sdk-ses (~> 1)
@@ -109,6 +112,10 @@ GEM
       aws-sessionstore-dynamodb (~> 2)
       concurrent-ruby (~> 1)
       railties (>= 5.2.0)
+    aws-sdk-s3 (1.119.1)
+      aws-sdk-core (~> 3, >= 3.165.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.4)
     aws-sdk-ses (1.49.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sigv4 (~> 1.1)
@@ -444,6 +451,7 @@ PLATFORMS
 DEPENDENCIES
   annotate (~> 3.2)
   aws-sdk-rails
+  aws-sdk-s3
   better_errors (~> 2.9, >= 2.9.1)
   binding_of_caller (~> 1.0)
   bootsnap
