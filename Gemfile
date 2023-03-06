@@ -69,7 +69,8 @@ gem 'jquery-rails'
 gem "pg", "~> 1.1"
 
 gem 'sitemap_generator'
-gem 'aws-sdk-rails', require: false  #AWS接続用
+gem 'aws-sdk-rails' #AWS接続用
+gem 'aws-sdk-s3'
 gem 'fog-aws'
 
 gem "meta-tags"
