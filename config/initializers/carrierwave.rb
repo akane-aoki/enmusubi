@@ -1,3 +1,7 @@
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
+
 CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
@@ -8,12 +12,13 @@ CarrierWave.configure do |config|
     aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
     # Tokyo
     region: ENV['AWS_REGION'],
+    path_style: true
   }
 
   # 公開・非公開の切り替え
-  config.fog_public     = true
+  # config.fog_public     = true
   # キャッシュの保存期間
-  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.days.to_i}" }
+  # config.fog_attributes = { 'Cache-Control' => "max-age=#{365.days.to_i}" }
 
   # キャッシュをS3に保存
   # config.cache_storage = :fog
