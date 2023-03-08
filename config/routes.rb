@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'top_pages#top'
 
   get 'guest_login', to: 'sessions#guest_login'
@@ -24,4 +25,11 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
   resource :invite, only: %i[show edit update]
+
+  namespace :admin do
+    root to: 'dashboards#index'
+    get 'login', to: 'sessions#new'
+    post 'login', to: 'sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
+  end
 end

@@ -30,4 +30,12 @@ module ApplicationHelper
       }
     }
   end
+
+  def page_title(page_title = '', admin = false)
+    base_title = if admin
+                   '遠結び(管理画面)'
+                 end
+
+    page_title.empty? ? base_title : page_title + ' | ' + base_title
+  end
 end

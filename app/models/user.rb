@@ -21,6 +21,8 @@ class User < ApplicationRecord
   geocoded_by :address #geocodingを行いたいカラムを指定
   after_validation :geocode, if: :address_changed? #geocodingするタイミングを指定
 
+  enum role: { general: 0, admin: 1 }
+
   def own?(object)
     id == object.user_id
   end
