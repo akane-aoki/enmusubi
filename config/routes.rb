@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'top_pages#top'
 
   get 'guest_login', to: 'sessions#guest_login'

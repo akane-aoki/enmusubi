@@ -11,6 +11,7 @@
     "esbuild": "^0.17.5",
     "jquery": "^3.6.3",
     "postcss": "^8.4.21",
+    "rails_admin": "3.1.1",
     "sass": "^1.57.1",
     "tailwindcss": "^3.2.4"
   },

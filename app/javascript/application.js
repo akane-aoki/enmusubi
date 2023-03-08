@@ -4,5 +4,3 @@
 import "@hotwired/turbo-rails"
 // import "./preview.js"
 import "./top_nav.js"
-
-//= require_tree .

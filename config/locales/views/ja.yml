@@ -26,6 +26,7 @@ ja:
       updated_password: "パスワードを変更しました"
       invited: "招待されました"
       not_invited: "招待できませんでした"
+      not_authorized: '権限がありません'
 
   time:
     formats:
@@ -120,7 +121,7 @@ ja:
       fail: 'パスワードの変更に失敗しました'
 
   admin:
-    user_sessions:
+    sessions:
       new:
         title: 'ログイン'
       create:
@@ -135,3 +136,6 @@ ja:
         title: 'ユーザー編集'
       show:
         title: 'ユーザー詳細'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
