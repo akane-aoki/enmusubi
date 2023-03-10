@@ -119,4 +119,7 @@ group :test do
   gem 'capybara', '~> 3.38'
   gem 'webdrivers', '~> 5.2'
 end
+
 gem "dockerfile-rails", ">= 1.2", :group => :development
+
+gem 'config'
