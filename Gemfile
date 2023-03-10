@@ -106,6 +106,8 @@ group :development do
   gem 'binding_of_caller', '~> 1.0'
 
   gem 'solargraph', '~> 0.48.0'
+
+  gem 'letter_opener_web', '~> 2.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -117,4 +119,7 @@ group :test do
   gem 'capybara', '~> 3.38'
   gem 'webdrivers', '~> 5.2'
 end
+
 gem "dockerfile-rails", ">= 1.2", :group => :development
+
+gem 'config'

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  get 'password_resets/create'
+  get 'password_resets/edit'
+  get 'password_resets/update'
   root 'top_pages#top'
 
   get 'guest_login', to: 'sessions#guest_login'
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
   resource :invite, only: %i[show edit update]
+  resources :password_resets, only: %i[new create edit update]
 
   namespace :admin do
     root to: 'dashboards#index'
@@ -32,4 +35,6 @@ Rails.application.routes.draw do
     post 'login', to: 'sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
   end
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

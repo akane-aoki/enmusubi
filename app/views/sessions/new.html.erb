@@ -20,5 +20,10 @@
         <%= f.submit t('defaults.login'), class: 'btn btn-accent' %>
       </div>
     <% end %>
+    <div class="my-4">
+      <%= link_to new_password_reset_path, class: 'underline btn btn-ghost' do %>
+        パスワードをお忘れの方は場合はこちら
+      <% end %>
+    </div>
   </div>
 </div>
