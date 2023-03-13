@@ -30,7 +30,9 @@ class DashboardsController < ApplicationController
     @partner = User.partner(current_user)
 
     meets_arr = Meet.meets_arr(current_user)
-    @meet_first = Meet.meets_all(current_user).limit(1).first.meet_day_start
+    if Meet.meets_all(current_user).limit(1).first
+      @meet_first = Meet.meets_all(current_user).limit(1).first.meet_day_start
+    end
     @today = Date.current
 
     if @meet_first && @meet_first >= @today
