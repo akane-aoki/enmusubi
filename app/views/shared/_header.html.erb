@@ -1,6 +1,6 @@
-<div class="navbar text-white bg-syuiro">
+<div class="navbar text-white bg-syuiro flex justify-between">
   <div class="navbar-start">
-    <div class="dropdown">
+    <div class="dropdown visible md:hidden">
       <label tabindex="0" class="btn btn-ghost btn-circle">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
       </label>
@@ -8,18 +8,27 @@
         <li><%= link_to "今まで会った日一覧を見る", meets_path, class:"justify-between" %></li>
         <li><%= link_to "2人のがんばりを見る", posts_path, class:"justify-between" %></li>
         <li><%= link_to "がんばりを伝える", new_post_path, class:"justify-between" %></li>
-        <li>
-          <% if @distance %>
-            <%= link_to "総移動距離を見る", distances_path, class:"justify-between" %>
-          <% end %>
-        </li>
       </ul>
+    </div>
+    <div class="hidden md:inline-block grid justify-items-start">
+      <%= link_to dashboards_path, class:"btn btn-ghost normal-case text-4xl" do %>
+        <%= image_tag 'logo.png', size: '150x50' %>
+      <% end %>
     </div>
   </div>
   <div class="navbar-center">
-    <%= link_to dashboards_path, class:"btn btn-ghost normal-case text-4xl" do %>
-      <%= image_tag 'logo.png', size: '150x50' %>
-    <% end %>
+    <div class="visible md:hidden">
+      <%= link_to dashboards_path, class:"btn btn-ghost normal-case text-4xl" do %>
+        <%= image_tag 'logo.png', size: '150x50' %>
+      <% end %>
+    </div>
+    <div class="hidden md:inline-block">
+      <ul class="flex justify-center">
+        <li><%= link_to "今まで会った日一覧を見る", meets_path, class:"btn btn-ghost lx:px-10" %></li>
+        <li><%= link_to "2人のがんばりを見る", posts_path, class:"btn btn-ghost lx:px-10" %></li>
+        <li><%= link_to "がんばりを伝える", new_post_path, class:"btn btn-ghost lx:px-10" %></li>
+      </ul>
+    </div>
   </div>
   <div class="navbar-end">
     <div class="dropdown dropdown-end">
