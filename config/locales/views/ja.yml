@@ -139,3 +139,10 @@ ja:
     dashboards:
       index:
         title: 'ダッシュボード'
+
+  pagination:
+    first: '最初'
+    truncate:
+    last: '最後'
+    next: '次のページ'
+    previous: '前のページ'
