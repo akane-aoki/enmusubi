@@ -1,7 +1,7 @@
 <!-- コメントフォーム -->
 <div class="flex justify-center text-center">
   <div class="m-5">
-    <%= form_with model: comment, url: [post, comment], id: "new_comment", local: false do |f| %>
+    <%= form_with model: comment, url: [post, comment], id: "new_comment" do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :body, class: "m-3" %>
       <%= f.text_area :body ,class: "form-control mb-3", id: 'js-new-comment-body', size: "50x5" %>

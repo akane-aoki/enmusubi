@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :dashboards, only: %i[index]
   resources :posts do
-    resources :comments, only: %i[create destroy], shallow: true
+    resources :comments, only: %i[create update destroy], shallow: true
   end
   resources :meets
   resources :distances, only: %i[index show]

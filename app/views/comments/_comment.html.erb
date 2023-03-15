@@ -9,8 +9,8 @@
     </div>
     <div id="js-textarea-comment-box-<%= comment.id %>" style="display: none;">
       <textarea id="js-textarea-comment-<%= comment.id %>" class="form-control mb-1"><%= comment.body %></textarea>
-      <%# <button class="btn btn-light js-button-edit-comment-cancel" data-comment-id="<%= comment.id %>">キャンセル</button> %>
-      <%# <button class="btn btn-success js-button-comment-update" data-comment-id="<%= comment.id %>">更新</button> %>
+      <button class="btn btn-accent js-button-edit-comment-cancel" data-comment-id="<%= comment.id %>">キャンセル</button>
+      <button class="btn btn-accent js-button-comment-update" data-comment-id="<%= comment.id %>">更新</button>
     </div>
   </td>
 
@@ -19,15 +19,15 @@
     <td class="action">
       <ul class="list-inline justify-content-center" style="float: right;">
         <li class="list-inline-item">
-          <a href=""><i class='js-edit-comment-button' data-comment-id="<%= comment.id %>" data-remote: true>
-            <%= icon('far', 'pen-to-square') %>
-          </a>
+          <%# <a href=""><i class='js-edit-comment-button' data-comment-id="<%= comment.id" data-remote: true> %>
+            <%# <%= icon('far', 'pen-to-square') %>
+          <%# </a> %>
         </li>
         <li class="list-inline-item">
           <%= button_to comment_path(comment),
                       class: 'js-delete-comment-button',
-                      data: { confirm: t('defaults.message.delete_confirm') },
                       method: :delete,
+                      data: { turbo_confirm: t('defaults.message.delete_confirm') },
                       remote: true do %>
             <%= icon 'fa', 'trash' %>
           <% end %>
