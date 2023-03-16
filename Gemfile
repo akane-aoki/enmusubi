@@ -70,7 +70,7 @@ gem "pg", "~> 1.1"
 
 gem 'sitemap_generator'
 gem 'aws-sdk-rails' #AWS接続用
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
 gem 'fog-aws'
 
 gem "meta-tags"
