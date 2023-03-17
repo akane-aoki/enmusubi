@@ -2,7 +2,7 @@
 //= require jquery
 //= require rails-ujs
 import "@hotwired/turbo-rails"
-// import "./preview.js"
 import "./top_nav.js"
 import "./edit_comment.js"
-import "./preview.js"
+import "./avatar_preview.js"
+import "./post_preview.js"

@@ -11,7 +11,7 @@
     </div>
     <div class="mb-5">
       <%= f.label :image, class:"font-bold text-2xl" %><br>
-      <%= f.file_field :image, onchange: 'previewImage(post_preview)', accept: 'image/*', class: 'file-input file-input-accent w-full max-w-xs mb-3' %>
+      <%= f.file_field :image, accept: 'image/*', class: 'js-post-preview file-input file-input-accent w-full max-w-xs mb-3' %>
       <%= f.hidden_field :image_cache %>
     </div>
     <div class='mt-3 mb-3 flex justify-center'>
@@ -22,20 +22,3 @@
     <%= f.submit t('defaults.create'), class: 'btn btn-accent text-xl mb-5' %>
   <% end %>
 </div>
-
-<script>
-function previewImage() {
-  const target = this.event.target;
-  const file = target.files[0];
-  const reader  = new FileReader();
-  reader.onloadend = function () {
-      const preview = document.querySelector("#post_preview")
-      if(preview) {
-          preview.src = reader.result;
-      }
-  }
-  if (file) {
-      reader.readAsDataURL(file);
-  }
-}
-</script>
