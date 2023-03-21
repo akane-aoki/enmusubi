@@ -17,6 +17,16 @@
 ## ■解決方法
   恋人と会えない期間を、次会う日までお互いに頑張る時間に変えたり、頑張った分のご褒美を設定したりする機能を通して、楽しく有意義な時間にします。
 
+## ■サービス画面
+#### レスポンシブ対応しているため、スマホでもパソコンでも使うことができます。
+---
+#### サービストップ画面
+  <a href="https://gyazo.com/5a0e2326ed05f175f5d81a43753c8fe3"><img src="https://i.gyazo.com/5a0e2326ed05f175f5d81a43753c8fe3.png" alt="Image from Gyazo" width="1000"/></a>
+
+#### ログイン後のダッシュボード画面（イメージ）
+  <a href="https://gyazo.com/2ef8432bbd8a31d9f5eedd65c20437f3"><img src="https://i.gyazo.com/2ef8432bbd8a31d9f5eedd65c20437f3.png" alt="Image from Gyazo" width="1000"/></a>
+  ダッシュボードから、各画面へ遷移することができます。
+
 ## ■実装済みの機能
 【MVPリリース】
 - ユーザー登録、ログイン、ログアウト機能
