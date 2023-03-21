@@ -32,6 +32,9 @@
 /config/credentials.yml.enc
 /config/database.yml
 
+.DS_Store
+.byebug_history
+
 vendor/bundle
 /app/assets/builds/*
 !/app/assets/builds/.keep
