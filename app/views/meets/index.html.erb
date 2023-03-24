@@ -6,6 +6,17 @@
     </div>
   </div>
 </div>
+<div class="md:flex justify-center">
+  <div class="text-center bg-white rounded-lg p-4 m-2 font-bold md:w-2/3 xl:w-1/3 border-2 border-syuiro">
+    <% if @day_count %>
+      <div class="text-2xl">次会える日まで</div>
+      <div class="font-bold text-4xl">あと
+        <span class="text-syuiro"><%= @day_count %></span>
+        日！
+      </div>
+    <% end %>
+  </div>
+</div>
 <%# 次会う日 %>
 <div class='row md:flex justify-center'>
   <div class='md:w-2/3 xl:w-1/3 text-center'>
