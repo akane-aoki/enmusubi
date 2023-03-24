@@ -13,6 +13,12 @@ class MeetsController < ApplicationController
     elsif Meet.meets_except_meet_first(current_user)
       @meets = @meets_all.last(@meets_all.length - 1)
     end
+
+    meet_arr = Meet.meets_all(current_user).limit(1)
+    @meet = meet_arr.pick(:meet_day_start)
+    if @meet && @meet >= @today
+      @day_count = (@meet - @today).to_i
+    end
   end
 
   def edit; end
