@@ -1,5 +1,5 @@
 ## ■サービス名
-### 遠結び
+## 遠結び
   サービスURL: https://enkyori-enmusubi.com
 
 ## ■サービス概要
