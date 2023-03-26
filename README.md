@@ -24,7 +24,7 @@
   <a href="https://gyazo.com/5a0e2326ed05f175f5d81a43753c8fe3"><img src="https://i.gyazo.com/5a0e2326ed05f175f5d81a43753c8fe3.png" alt="Image from Gyazo" width="1000"/></a>
 
 #### ログイン後のダッシュボード画面（イメージ）
-  <a href="https://gyazo.com/2ef8432bbd8a31d9f5eedd65c20437f3"><img src="https://i.gyazo.com/2ef8432bbd8a31d9f5eedd65c20437f3.png" alt="Image from Gyazo" width="1000"/></a>
+  <a href="https://gyazo.com/a1bf863bffa7aac91d31cb304ce1dd9b"><img src="https://i.gyazo.com/a1bf863bffa7aac91d31cb304ce1dd9b.png" alt="Image from Gyazo" width="1000"/></a>
   ダッシュボードから、各画面へ遷移することができます。
 
 ## ■実装済みの機能
