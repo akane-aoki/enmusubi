@@ -71,5 +71,10 @@
         <p class="text-xl">今まで会った日はまだありません</p>
       <% end %>
     </div>
+    <div class='md:flex justify-center'>
+      <div class='md:w-2/3 text-xs md:text-sm'>
+        <%= paginate @meets_all %>
+      </div>
+    </div>
   </div>
 </div>

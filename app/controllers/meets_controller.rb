@@ -6,7 +6,7 @@ class MeetsController < ApplicationController
     @meet_first = Meet.meets_all(current_user).limit(1).first
     @today = Date.current
 
-    @meets_all = Meet.meets_all(current_user)
+    @meets_all = Meet.meets_all(current_user).page(params[:page])
 
     if Meet.meets_include_meet_first(current_user)
       @meets = @meets_all
