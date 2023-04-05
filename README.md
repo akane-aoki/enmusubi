@@ -1,12 +1,12 @@
-  <img src="/assets/images/ogp.png">
+<img src="app/assets/images/ogp.png">
 
-  ▼**サービスURL**
+▼**サービスURL**
 
-    <a href="https://enkyori-enmusubi.com">https://enkyori-enmusubi.com</a>
+https://enkyori-enmusubi.com/
 
-  ▼**紹介記事**
+▼**紹介記事**
 
-    [【個人開発】「遠距離恋愛」をしている人のためのカップルアプリを開発しました！](https://qiita.com/akane_zark/items/9e90615b40f4353c4e1a)
+[【個人開発】「遠距離恋愛」をしている人のためのカップルアプリを開発しました！ -Qiita](https://qiita.com/akane_zark/items/9e90615b40f4353c4e1a)
 
 ## ■サービス概要
   「遠結び」は、遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、
