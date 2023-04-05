@@ -1,6 +1,9 @@
 ## ■サービス名
-## 遠結び
-  サービスURL: https://enkyori-enmusubi.com
+  <img src="images/ogp.png">
+  #### ▼サービスURL
+    https://enkyori-enmusubi.com
+  #### ▼紹介記事
+    https://qiita.com/akane_zark/items/9e90615b40f4353c4e1a
 
 ## ■サービス概要
   遠距離恋愛中で、恋人と会えない寂しさを抱えている方に、
