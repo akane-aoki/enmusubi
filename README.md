@@ -1,9 +1,7 @@
 ## ■サービス名
-  <img src="https://enkyori-enmusubi.s3.ap-northeast-1.amazonaws.com/images/%E7%B8%81%E7%B5%90%E3%81%B2%E3%82%99ogp.png">
-
+  <img src="images/ogp.png">
   #### ▼サービスURL
     https://enkyori-enmusubi.com
-
   #### ▼紹介記事
     https://qiita.com/akane_zark/items/9e90615b40f4353c4e1a
 
