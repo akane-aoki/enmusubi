@@ -1,4 +1,4 @@
-  <img src="./assets/images/ogp.png">
+  <img src="/assets/images/ogp.png">
 
   ▼**サービスURL**
 
