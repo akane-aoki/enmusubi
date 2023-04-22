@@ -27,7 +27,7 @@
     <% end %>
   </div>
 
-  <%# effortモデル %>
+  <%# effort,postモデル %>
   <div class="bg-white rounded-lg p-4 m-2 md:w-1/2">
     <div class="text-2xl my-5 border-b-2 border-syuiro">会えない間にがんばること</div>
     <% if @my_effort %>
@@ -68,6 +68,9 @@
       <div>
         <%= link_to edit_reward_path(@reward) do %>
           <button class="btn btn-accent m-5">ごほうびを編集する</button>
+        <% end %>
+        <%= link_to rewards_path do %>
+          <button class="btn btn-accent m-5">ごほうび一覧を見る</button>
         <% end %>
       </div>
     <% else %>

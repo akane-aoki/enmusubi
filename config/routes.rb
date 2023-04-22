@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :meets
   resources :distances, only: %i[index show]
   resources :relationships, only: %i[new create]
-  resources :rewards, only: %i[new create show edit update]
+  resources :rewards, only: %i[index new create show edit update]
   resources :efforts, only: %i[new create edit update]
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
