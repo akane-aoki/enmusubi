@@ -2,6 +2,11 @@ class RewardsController < ApplicationController
   before_action :set_user, only: %i[show edit update]
   before_action :guest_check
 
+  def index
+    @rewards_all = Reward.rewards_all(current_user).page(params[:page])
+
+  end
+
   def new
     @reward = Reward.new
   end

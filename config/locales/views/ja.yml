@@ -87,6 +87,8 @@ ja:
       title: '会う日を編集する'
 
   rewards:
+    index:
+      title: 'ごほうび一覧'
     show:
       title: '会えなかった分のごほうび'
     new:

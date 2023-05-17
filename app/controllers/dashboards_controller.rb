@@ -1,12 +1,13 @@
 class DashboardsController < ApplicationController
   def index
     # meetsモデル
-    today = Date.current
     meet_arr = Meet.meets_all(current_user).limit(1)
     @meet = meet_arr.pick(:meet_day_start)
+    @today = Date.current
 
-    if @meet && @meet >= today
-      @day_count = (@meet - today).to_i
+
+    if @meet && @meet >= @today
+      @day_count = (@meet - @today).to_i
     end
 
     # effortsモデル
@@ -21,7 +22,7 @@ class DashboardsController < ApplicationController
     end
 
     if @reward && @meets_second
-      @reward_count = (today - @meets_second).to_i
+      @reward_count = (@today - @meets_second).to_i
     end
 
     @not_meet_day = Reward.find_by(relationship_id: current_user.relationship_id)
@@ -33,7 +34,6 @@ class DashboardsController < ApplicationController
     if Meet.meets_all(current_user).limit(1).first
       @meet_first = Meet.meets_all(current_user).limit(1).first.meet_day_start
     end
-    @today = Date.current
 
     if @meet_first && @meet_first >= @today
       @meets_count = meets_arr.length - 1
